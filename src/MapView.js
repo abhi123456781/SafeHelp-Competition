@@ -70,7 +70,7 @@ export default function MapView({ resources, userLocation, mapCenter }) {
             <Popup>You are here</Popup>
           </Marker>
         )}
-        {resources.map(((r, i) ) => (
+        {resources.map((r, i) => (
           <Marker
             key={i}
             position={[r.lat, r.lng]}

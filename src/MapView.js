@@ -1,7 +1,7 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import resources from './resources.json';
+import resources from './resourcesByCity.json';
 
 // Fix default icon issue
 delete L.Icon.Default.prototype._getIconUrl;

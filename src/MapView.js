@@ -4,22 +4,22 @@ import 'leaflet/dist/leaflet.css';
 
 
 const categoryIcons = {
-  Food: "https://cdn-icons-png.flaticon.com/512/1046/1046784.png",
-  Shelter: "https://cdn-icons-png.flaticon.com/512/2271/2271343.png",
-  "Mental Health": "https://cdn-icons-png.flaticon.com/512/3126/3126554.png",
-  "Health & Wellness": "https://cdn-icons-png.flaticon.com/512/1484/1484815.png",
-  "Support Services": "https://cdn-icons-png.flaticon.com/512/2460/2460595.png",
-  "Crisis Support": "https://cdn-icons-png.flaticon.com/512/1828/1828843.png",
-  "Youth Programs": "https://cdn-icons-png.flaticon.com/512/893/893257.png",
-  "Community Centers": "https://cdn-icons-png.flaticon.com/512/2769/2769339.png",
-  Education: "https://cdn-icons-png.flaticon.com/512/3135/3135768.png",
-  Transportation: "https://cdn-icons-png.flaticon.com/512/61/61088.png",
-  "Senior Services": "https://cdn-icons-png.flaticon.com/512/3103/3103463.png",
-  Veterans: "https://cdn-icons-png.flaticon.com/512/2965/2965278.png",
-  "Legal Assistance": "https://cdn-icons-png.flaticon.com/512/929/929430.png",
-  "Immigration Support": "https://cdn-icons-png.flaticon.com/512/684/684908.png",
-  "Comprehensive Support": "https://cdn-icons-png.flaticon.com/512/2910/2910791.png",
-  default: "https://cdn-icons-png.flaticon.com/512/565/565547.png"
+  "Food": "https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png",
+  "Shelter": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f3e0.svg",
+  "Mental Health": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f9e0.svg",
+  "Health & Wellness": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/2695.svg",
+  "Support Services": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f91d.svg",
+  "Crisis Support": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4de.svg",
+  "Youth Programs": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f466.svg",
+  "Community Centers": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f465.svg",
+  "Education": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4da.svg",
+  "Transportation": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f68c.svg",
+  "Senior Services": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f474.svg",
+  "Veterans": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f396.svg",
+  "Legal Assistance": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/2696.svg",
+  "Immigration Support": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f30d.svg",
+  "Comprehensive Support": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f9f3.svg",
+  "default": "https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png"
 };
 
 const getCategoryIcon = (category) => {
@@ -56,7 +56,7 @@ export default function MapView({ resources, userLocation, mapCenter }) {
       >
         <RecenterMap center={mapCenter} />
         <TileLayer
-          attribution='© <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
+          attribution='Â© <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {userLocation && (

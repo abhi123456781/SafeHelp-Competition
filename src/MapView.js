@@ -1,9 +1,8 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import data from './resourcesByCity.json';
 
-// Fix default icon issue
+// Fix Leaflet marker icons (important for production builds)
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
@@ -11,17 +10,20 @@ L.Icon.Default.mergeOptions({
   shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
 });
 
-export default function MapView() {
-  const position = [42.7638, -71.4671]; // Center of Nashua
+// Map component receives `resources` from App.js
+export default function MapView({ resources }) {
+  // Default map center (Nashua, NH); optional: make this dynamic later
+  const position = [42.7638, -71.4671];
 
   return (
     <div className="h-[500px] w-full my-6 rounded-xl overflow-hidden shadow">
       <MapContainer center={position} zoom={13} style={{ height: '100%', width: '100%' }}>
         <TileLayer
-          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
+          attribution='&copy; OpenStreetMap contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {resourcesByCity.map((r, i) => (
+
+        {resources.map((r, i) => (
           <Marker key={i} position={[r.lat, r.lng]}>
             <Popup>
               <div>

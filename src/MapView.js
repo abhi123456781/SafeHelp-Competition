@@ -1,13 +1,15 @@
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import iconUrl from 'leaflet/dist/images/marker-icon.png';
+import shadowUrl from 'leaflet/dist/images/marker-shadow.png';
 
 // Fix Leaflet marker icons
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
-  iconUrl: require('leaflet/dist/images/marker-icon.png'),
-  shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+  iconUrl,
+  shadowUrl,
 });
 
 function calculateDistance(lat1, lon1, lat2, lon2) {
@@ -29,6 +31,41 @@ function MapCenter({ position }) {
   return null;
 }
 
+// Define custom icons by category
+const icons = {
+  Food: new L.Icon({
+    iconUrl: 'https://cdn-icons-png.flaticon.com/512/1046/1046784.png',
+    iconSize: [30, 30],
+    iconAnchor: [15, 30],
+    popupAnchor: [0, -30]
+  }),
+  Shelter: new L.Icon({
+    iconUrl: 'https://cdn-icons-png.flaticon.com/512/69/69524.png',
+    iconSize: [30, 30],
+    iconAnchor: [15, 30],
+    popupAnchor: [0, -30]
+  }),
+  Mental: new L.Icon({
+    iconUrl: 'https://cdn-icons-png.flaticon.com/512/168/168882.png',
+    iconSize: [30, 30],
+    iconAnchor: [15, 30],
+    popupAnchor: [0, -30]
+  }),
+  Crisis: new L.Icon({
+    iconUrl: 'https://cdn-icons-png.flaticon.com/512/1048/1048953.png',
+    iconSize: [30, 30],
+    iconAnchor: [15, 30],
+    popupAnchor: [0, -30]
+  }),
+  default: new L.Icon.Default(),
+  user: new L.Icon({
+    iconUrl: 'https://cdn-icons-png.flaticon.com/512/684/684908.png',
+    iconSize: [30, 30],
+    iconAnchor: [15, 30],
+    popupAnchor: [0, -30]
+  })
+};
+
 export default function MapView({ resources, userLocation }) {
   const defaultPosition = [42.7638, -71.4671];
   const center = userLocation ? [userLocation.lat, userLocation.lng] : defaultPosition;
@@ -43,7 +80,7 @@ export default function MapView({ resources, userLocation }) {
         />
 
         {userLocation && (
-          <Marker position={center}>
+          <Marker position={center} icon={icons.user}>
             <Popup>You are here</Popup>
           </Marker>
         )}
@@ -52,9 +89,10 @@ export default function MapView({ resources, userLocation }) {
           const distance = userLocation
             ? calculateDistance(userLocation.lat, userLocation.lng, r.lat, r.lng).toFixed(1)
             : null;
+          const icon = icons[r.category] || icons.default;
 
           return (
-            <Marker key={i} position={[r.lat, r.lng]}>
+            <Marker key={i} position={[r.lat, r.lng]} icon={icon}>
               <Popup>
                 <div>
                   <strong>{r.name}</strong><br />

@@ -47,10 +47,10 @@ Many people in crisis — especially youth — don’t know where to go for help
 
 ---
 
-## Live Site
+## Where to Access
 
 > [https://safehelpnashua.netlify.app](https://safehelpnashua.netlify.app)  
-_(Replace this link with your actual Netlify URL)_
+
 
 ---
 

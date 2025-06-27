@@ -1,0 +1,172 @@
+[
+  {
+    "name":"Nashua Soup Kitchen & Shelter",
+    "address":"2 Quincy St, Nashua, NH 03060",
+    "category":"Food",
+    "open_hours":"Mon\u2013Fri: 8am\u20136pm",
+    "contact":"(603) 889-7770",
+    "youth_friendly":true,
+    "lat":42.7576,
+    "lng":-71.4639
+  },
+  {
+    "name":"Corpus Christi Food Pantry",
+    "address":"3 Crown St, Nashua, NH 03060",
+    "category":"Food",
+    "open_hours":"Mon & Wed: 10am\u20131pm, Fri: 10am\u201312pm",
+    "contact":"(603) 882-6372",
+    "youth_friendly":true,
+    "lat":42.7659,
+    "lng":-71.4605
+  },
+  {
+    "name":"The Salvation Army \u2013 Nashua",
+    "address":"1 Montgomery Ave, Nashua, NH 03060",
+    "category":"Food",
+    "open_hours":"Mon\u2013Fri: 9am\u20132pm",
+    "contact":"(603) 889-5151",
+    "youth_friendly":true,
+    "lat":42.7596,
+    "lng":-71.4683
+  },
+  {
+    "name":"St. Joseph\u2019s Pantry at St. Louis Church",
+    "address":"48 W Hollis St, Nashua, NH 03060",
+    "category":"Food",
+    "open_hours":"Tues: 4pm\u20136pm",
+    "contact":"(603) 882-4362",
+    "youth_friendly":true,
+    "lat":42.7582,
+    "lng":-71.4702
+  },
+  {
+    "name":"Grace Lutheran Church Pantry",
+    "address":"130 Spit Brook Rd, Nashua, NH 03062",
+    "category":"Food",
+    "open_hours":"Sat: 9am\u201311am",
+    "contact":"(603) 888-7579",
+    "youth_friendly":true,
+    "lat":42.7346,
+    "lng":-71.4799
+  },
+  {
+    "name":"Nashua Seventh-day Adventist Church",
+    "address":"20 Robinson Rd, Nashua, NH 03060",
+    "category":"Food",
+    "open_hours":"Thurs: 6pm\u20137pm",
+    "contact":"(603) 889-5762",
+    "youth_friendly":true,
+    "lat":42.7587,
+    "lng":-71.4517
+  },
+  {
+    "name":"Harbor Care Emergency Shelter",
+    "address":"45 High St, Nashua, NH 03060",
+    "category":"Shelter",
+    "open_hours":"24\/7",
+    "contact":"(603) 882-3616",
+    "youth_friendly":true,
+    "lat":42.7601,
+    "lng":-71.4652
+  },
+  {
+    "name":"Front Door Agency",
+    "address":"7 Concord St, Nashua, NH 03064",
+    "category":"Shelter",
+    "open_hours":"Mon\u2013Fri: 8:30am\u20134:30pm",
+    "contact":"(603) 886-2866",
+    "youth_friendly":true,
+    "lat":42.765,
+    "lng":-71.4673
+  },
+  {
+    "name":"Marguerite\u2019s Place",
+    "address":"87 Palm St, Nashua, NH 03060",
+    "category":"Shelter",
+    "open_hours":"Office: Mon\u2013Fri 9am\u20135pm",
+    "contact":"(603) 598-1582",
+    "youth_friendly":true,
+    "lat":42.7642,
+    "lng":-71.4635
+  },
+  {
+    "name":"Greater Nashua Mental Health",
+    "address":"440 Amherst St, Nashua, NH 03063",
+    "category":"Mental Health",
+    "open_hours":"Mon\u2013Fri: 8am\u20135pm",
+    "contact":"(603) 889-6147",
+    "youth_friendly":true,
+    "lat":42.7686,
+    "lng":-71.505
+  },
+  {
+    "name":"Counseling Center of Nashua",
+    "address":"1 Main St #202, Nashua, NH 03064",
+    "category":"Mental Health",
+    "open_hours":"Mon\u2013Fri: 9am\u20135pm",
+    "contact":"(603) 883-0005",
+    "youth_friendly":true,
+    "lat":42.7638,
+    "lng":-71.4665
+  },
+  {
+    "name":"Youth Council",
+    "address":"112 W Pearl St, Nashua, NH 03060",
+    "category":"Mental Health",
+    "open_hours":"Mon\u2013Fri: 9am\u20135pm",
+    "contact":"(603) 889-1090",
+    "youth_friendly":true,
+    "lat":42.759,
+    "lng":-71.468
+  },
+  {
+    "name":"Bridges Domestic & Sexual Violence Support",
+    "address":"33 East Pearl St, Nashua, NH 03060",
+    "category":"Crisis Support",
+    "open_hours":"24\/7",
+    "contact":"(603) 889-0858",
+    "youth_friendly":true,
+    "lat":42.7634,
+    "lng":-71.4622
+  },
+  {
+    "name":"211 NH Hotline",
+    "address":"N\/A",
+    "category":"Crisis Support",
+    "open_hours":"24\/7",
+    "contact":"Dial 211",
+    "youth_friendly":true,
+    "lat":42.7653,
+    "lng":-71.4671
+  },
+  {
+    "name":"Southern NH Services",
+    "address":"134 Allds St, Nashua, NH 03060",
+    "category":"Support Services",
+    "open_hours":"Mon\u2013Fri: 8am\u20134:30pm",
+    "contact":"(603) 889-3440",
+    "youth_friendly":true,
+    "lat":42.7541,
+    "lng":-71.4493
+  },
+  {
+    "name":"Nashua Division of Public Health",
+    "address":"18 Mulberry St, Nashua, NH 03060",
+    "category":"Support Services",
+    "open_hours":"Mon\u2013Fri: 8am\u20135pm",
+    "contact":"(603) 589-4560",
+    "youth_friendly":true,
+    "lat":42.7605,
+    "lng":-71.462
+  },
+  {
+    "name":"Nashua Housing Authority",
+    "address":"40 E Pearl St, Nashua, NH 03060",
+    "category":"Support Services",
+    "open_hours":"Mon\u2013Fri: 8am\u20134:30pm",
+    "contact":"(603) 883-5661",
+    "youth_friendly":true,
+    "lat":42.763,
+    "lng":-71.463
+  }
+]

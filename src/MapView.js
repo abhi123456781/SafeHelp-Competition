@@ -21,7 +21,7 @@ export default function MapView() {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {resources.map((r, i) => (
+        {resourcesByCity.map((r, i) => (
           <Marker key={i} position={[r.lat, r.lng]}>
             <Popup>
               <div>

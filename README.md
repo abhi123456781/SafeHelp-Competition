@@ -70,6 +70,19 @@ Many people in crisis — especially youth — don’t know where to go for help
 
 ---
 
+## Expand SafeHelp to Your City
+
+SafeHelp is open source and built to scale. If you want to help people in your city find food, shelter, or mental health support:
+
+1. Fork this repo
+2. Replace or add to the `resources.json` file
+3. Customize the title and deploy with Netlify (free)
+4. Share it with local orgs or schools
+
+Need help? Open an issue or DM me on GitHub!
+
+---
+
 ## License
 
 MIT — free to use, share, and expand. Help your city build one too.

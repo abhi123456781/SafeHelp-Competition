@@ -1,47 +1,35 @@
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
-import { Icon } from 'leaflet';
+import { Icon, divIcon } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import L from 'leaflet';
 
 const emojiIcons = {
-  "Food": "\ud83c\udf4e",
-  "Shelter": "\ud83c\udfe0",
-  "Mental Health": "\ud83e\udde0",
-  "Health & Wellness": "\ud83c\udfe5",
-  "Support Services": "\ud83e\udde9",
-  "Crisis Support": "\ud83d\udcde",
-  "Youth Programs": "\ud83d\udc67",
-  "Community Centers": "\ud83e\uddd1\u200d\ud83e\udd1d\u200d\ud83e\uddd1",
-  "Education": "\ud83d\udcda",
-  "Transportation": "\ud83d\ude8c",
-  "Senior Services": "\ud83d\udc74",
-  "Veterans": "\ud83c\udf96",
-  "Legal Assistance": "\u2696\ufe0f",
-  "Immigration Support": "\ud83c\udf0e",
-  "Comprehensive Support": "\ud83e\udded",
-  "default": "\ud83d\udccd"
+  "Food": "🍎",
+  "Shelter": "🏠",
+  "Mental Health": "🧠",
+  "Health & Wellness": "🏥",
+  "Support Services": "🧩",
+  "Crisis Support": "📞",
+  "Youth Programs": "👧",
+  "Community Centers": "🧑‍🤝‍🧑",
+  "Education": "📚",
+  "Transportation": "🚌",
+  "Senior Services": "👴",
+  "Veterans": "🎖",
+  "Legal Assistance": "⚖️",
+  "Immigration Support": "🌎",
+  "Comprehensive Support": "🧭",
+  "default": "📍"
 };
 
 const getEmojiIcon = (category) => {
   const emoji = emojiIcons[category] || emojiIcons.default;
-  return L.divIcon({
+  return divIcon({
     html: `<div style="font-size: 24px;">${emoji}</div>`,
     className: '',
     iconSize: [24, 24],
-    iconAnchor: [12, 24]
+    iconAnchor: [12, 24],
   });
 };
-
-
-
-
-
-
-const userIcon = new Icon({
-  iconUrl: "https://cdn-icons-png.flaticon.com/512/684/684908.png", // pin icon
-  iconSize: [30, 30],
-  iconAnchor: [15, 30],
-});
 
 function RecenterMap({ center }) {
   const map = useMap();
@@ -62,14 +50,16 @@ export default function MapView({ resources, userLocation, mapCenter }) {
       >
         <RecenterMap center={mapCenter} />
         <TileLayer
-          attribution='Â© <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
+          attribution='© <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+
         {userLocation && (
-          <Marker position={[userLocation.lat, userLocation.lng]} icon={getEmojiIcon(r.category)}>
+          <Marker position={[userLocation.lat, userLocation.lng]} icon={getEmojiIcon("default")}>
             <Popup>You are here</Popup>
           </Marker>
         )}
+
         {resources.map((r, i) => (
           <Marker
             key={i}
@@ -77,7 +67,7 @@ export default function MapView({ resources, userLocation, mapCenter }) {
             icon={getEmojiIcon(r.category)}
           >
             <Popup>
-              <strong>{r.name}</strong>
+              <strong>{emojiIcons[r.category] || emojiIcons.default} {r.name}</strong>
               <br />
               {r.address}
               {r.distance && (

@@ -2,6 +2,13 @@
 // tailwind.config.js
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  safelist: [
+    'hover:bg-[#e6f0ff]',
+    'bg-[#e6f0ff]',
+    'bg-[#0047AB]',
+    'text-[#0047AB]',
+    'border-[#0047AB]',
+  ],
   theme: {
     extend: {
       colors: {
@@ -12,4 +19,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+};

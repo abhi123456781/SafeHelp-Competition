@@ -18,6 +18,10 @@ const emojiIcons = {
   "Legal Assistance": "⚖️",
   "Immigration Support": "🌎",
   "Comprehensive Support": "🧭",
+  "Clothing": "👕",
+  "Furniture & Household": "🛋️",
+  "Employment Assistance": "💼",
+  "Housing & Homelessness": "🏘️",
   "default": "📍"
 };
 

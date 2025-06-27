@@ -31,7 +31,7 @@ Many people in crisis — especially youth — don’t know where to go for help
 ## Features
 
 - **Verified Local Listings** — real data from organizations in New England
-- **Category Filters** — search by service type instantly
+- **Category Filters** — search by service type instantly and cards ordered by distance
 - **Map View** — interactive map with GPS pins and Google Maps links
 - **Responsive Design** — mobile- and desktop-friendly UI
 - **Open Submission Form** — anyone can suggest a new resource

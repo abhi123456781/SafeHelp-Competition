@@ -33,12 +33,17 @@ Many people in crisis — especially youth — don’t know where to go for help
 
 ---
 
-## Tech Stack
+## Technologies Used
 
-- React + Tailwind CSS (frontend)
-- Leaflet.js + React-Leaflet (maps)
-- GitHub + Netlify (deployment)
-- JSON-based resource data (easy to expand or update)
+| Technology         | Purpose                                      |
+|--------------------|----------------------------------------------|
+| **React**          | Frontend framework for building UI components |
+| **Tailwind CSS**   | Utility-first CSS framework for responsive styling |
+| **Leaflet.js**     | Open-source JavaScript library for maps      |
+| **React-Leaflet**  | React bindings for Leaflet maps              |
+| **Netlify**        | Hosting and continuous deployment            |
+| **Git + GitHub**   | Version control and project collaboration    |
+| **JSON**           | Lightweight local database for resource data |
 
 ---
 

@@ -12,7 +12,7 @@ L.Icon.Default.mergeOptions({
 });
 
 export default function MapView() {
-  const position = [42.7638, -71.4671]; // Nashua center
+  const position = [42.7638, -71.4671]; // Center of Nashua
 
   return (
     <div className="h-[500px] w-full my-6 rounded-xl overflow-hidden shadow">
@@ -24,9 +24,19 @@ export default function MapView() {
         {resources.map((r, i) => (
           <Marker key={i} position={[r.lat, r.lng]}>
             <Popup>
-              <strong>{r.name}</strong><br />
-              {r.address}<br />
-              {r.category}
+              <div>
+                <strong>{r.name}</strong><br />
+                {r.address}<br />
+                <em>{r.category}</em><br />
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(r.address)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 underline"
+                >
+                  Open in Google Maps
+                </a>
+              </div>
             </Popup>
           </Marker>
         ))}

@@ -1,35 +1,40 @@
 
-# SafeHelp NH
 
-**SafeHelp Nashua** is a public web app designed to help individuals and families in the Nashua, New Hampshire area quickly find **free, local support services** such as food assistance, shelters, crisis support, and mental health care.
+# SafeHelp NE
+
+**SafeHelp NE** is a free, open-source civic tech platform that helps people in New England find **local support services** such as food, housing, mental health care, and crisis support.
+
+Originally launched for Nashua, NH, SafeHelp now supports **multi-city resource data**, and is designed to be expanded by local contributors and volunteers.
 
 ---
 
 ## Purpose
 
-Many people in crisis — especially youth — don’t know where to go for help. Resources are scattered, outdated, or not user-friendly. SafeHelp Nashua solves this by:
+Many people in crisis — especially youth — don’t know where to go for help. Resources are scattered, outdated, or not user-friendly. SafeHelp New England solves this by:
 
-- Centralizing essential services into one clean, searchable site
-- Providing an **interactive map** with real GPS markers
-- Offering category filters (like Food, Shelter, Crisis Support)
-- Ensuring accessibility across mobile and desktop devices
+- Centralizing trusted, free support services in one clean interface
+- Displaying all locations on an interactive map
+- Filtering by category (Food, Shelter, Mental Health, Crisis Support, etc.)
+- Working on both mobile and desktop for easy access anywhere
 
 ---
 
-## Who It’s For
+## Who It's For
 
-- Individuals facing food insecurity, housing instability, or crisis
-- Teens and young adults seeking youth-friendly help
-- Educators, counselors, and local nonprofits who make referrals
+- People in need of basic support (food, housing, crisis response)
+- Teens, students, and families in underserved areas
+- Teachers, counselors, nonprofits, and outreach workers
 
 ---
 
 ## Features
 
-- **Real Resource Listings** — from verified local data (SNHH, NH Food Bank, etc.)
-- **Category Filters** — Food, Shelter, Mental Health, and more
-- **Map View** — Interactive Leaflet map with location pins
-- **Responsive Design** — Looks great on phones and desktops
+- **Verified Local Listings** — real data from organizations in New England
+- **Category Filters** — search by service type instantly
+- **Map View** — interactive map with GPS pins and Google Maps links
+- **Responsive Design** — mobile- and desktop-friendly UI
+- **Open Submission Form** — anyone can suggest a new resource
+- **Multi-City Support** — contributors can expand SafeHelp to their own towns
 
 ---
 
@@ -37,54 +42,69 @@ Many people in crisis — especially youth — don’t know where to go for help
 
 | Technology         | Purpose                                      |
 |--------------------|----------------------------------------------|
-| **React**          | Frontend framework for building UI components |
-| **Tailwind CSS**   | Utility-first CSS framework for responsive styling |
-| **Leaflet.js**     | Open-source JavaScript library for maps      |
-| **React-Leaflet**  | React bindings for Leaflet maps              |
-| **Netlify**        | Hosting and continuous deployment            |
-| **Git + GitHub**   | Version control and project collaboration    |
-| **JSON**           | Lightweight local database for resource data |
+| **React**          | Frontend framework for building UI           |
+| **Tailwind CSS**   | Responsive styling and layout                |
+| **Leaflet.js**     | Interactive maps                             |
+| **React-Leaflet**  | React bindings for Leaflet                   |
+| **Netlify**        | Hosting + auto deployment                    |
+| **Git + GitHub**   | Version control and collaboration            |
+| **JSON**           | Easy-to-edit structured local data           |
 
 ---
 
-## Where to Access
+## Live Website
 
-> [https://safehelpnashua.netlify.app](https://safehelpnashua.netlify.app)  
+> [https://safehelpne.netlify.app](https://safehelpne.netlify.app)  
+> _(Replace with your custom domain if using one)_
 
+---
+
+## Submit a New Resource
+
+Want to add a food pantry, shelter, or youth-friendly service to the site?
+
+Submit here:  
+[**Submit a Resource Google Form**](https://docs.google.com/forms/d/e/1FAIpQLSeh7viSbU-5DT_9XzBUHczUpByAhi8Ve1zE0I8FZSUtbTAZ-Q/viewform?usp=dialog)
+
+All submissions are reviewed before going live.
+
+---
+
+## Contribute to SafeHelp
+
+You can bring SafeHelp to your town or expand it across your state.
+
+### To add a new city:
+
+1. Fork this repo
+2. Open `resourcesByCity.json`
+3. Add a new key like `"boston-ma": [ ... ]` with structured resources
+4. Add the city name to the selector in `App.js`
+5. Push and deploy your own copy (Netlify or Vercel)
+
+### To submit a resource via GitHub:
+
+You can also [open a new issue](https://github.com/YOUR_USERNAME/safehelp-ne/issues/new?template=new-resource.md) and paste in a formatted JSON snippet.
 
 ---
 
 ## Data Sources
 
 - Southern New Hampshire Health Food Resource Guide (2025)
-- NH Food Bank Partner Agencies
-- Nashua Soup Kitchen & Shelter, Harbor Care, and local org websites
+- NH Food Bank & local shelter websites
+- Direct submissions via Google Form
 
 ---
 
 ## Future Plans
 
-- Natural language “hint assistant” to suggest resources
-- Admin form for community orgs to submit/edit listings
-- Analytics dashboard for school and nonprofit partners
+- Smart AI-based search assistant (natural language hint generator)
+- Organization submission portal with approval flow
+- Analytics dashboard for community orgs
+- SMS or offline mode for underserved users
 
 ---
 
-## Expand SafeHelp to Your City
+## Contact
 
-SafeHelp is open source and built to scale. If you want to help people in your city find food, shelter, or mental health support:
-
-1. Fork this repo
-2. Replace or add to the `resources.json` file
-3. Customize the title and deploy with Netlify (free)
-4. Share it with local orgs or schools
-
-Need help? Open an issue or DM me on GitHub!
-
----
-
-## License
-
-MIT — free to use, share, and expand. Help your city build one too.
-
----
+Feel free to reach out via GitHub or email if you'd like to collaborate or discuss this project further.

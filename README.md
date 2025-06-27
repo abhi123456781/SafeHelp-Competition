@@ -72,19 +72,19 @@ All submissions are reviewed before going live.
 
 ## Contribute to SafeHelp
 
-You can bring SafeHelp to your town or expand it across your state.
+Want to add a new city or resource? Awesome! This is a shared open source project, and we'd love your help — but we maintain a **single official version** at [safehelpne.netlify.app](https://safehelpne.netlify.app).
 
-### To add a new city:
+### 🛠 Ways to Contribute
 
-1. Fork this repo
-2. Open `resourcesByCity.json`
-3. Add a new key like `"boston-ma": [ ... ]` with structured resources
-4. Add the city name to the selector in `App.js`
-5. Push and deploy your own copy (Netlify or Vercel)
+1. Clone the repo (or fork it if needed)
+2. Make your changes:
+   - Add resources to `resourcesByCity.json`
+   - Update logic in `App.js` if needed
+3. Submit a **pull request (PR)** — we'll review and merge it if it's a good fit!
 
-### To submit a resource via GitHub:
+ Please **do not deploy your own version**. Help us build and maintain one shared SafeHelp site for all of New England!
 
-You can also [open a new issue](https://github.com/YOUR_USERNAME/safehelp-ne/issues/new?template=new-resource.md) and paste in a formatted JSON snippet.
+Have questions? [Open an issue](https://github.com/abhi123456781/safehelp-ne/issues/new) or email us.
 
 ---
 

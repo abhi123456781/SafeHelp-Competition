@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import './index.css';
 import data from './resourcesByCity.json';
@@ -53,11 +52,11 @@ function App() {
             <button
               key={i}
               onClick={() => setSelectedCategory(cat)}
-              className={\`px-4 py-1 rounded-full text-sm border transition ${
+              className={`px-4 py-1 rounded-full text-sm border transition ${
                 selectedCategory === cat
                   ? 'bg-blue-600 text-white border-blue-600'
                   : 'bg-white text-blue-700 border-blue-500 hover:bg-blue-100'
-              }\`}
+              }`}
             >
               {cat}
             </button>
@@ -80,7 +79,7 @@ function App() {
             <p className="text-sm"><strong>Youth Friendly:</strong> {r.youth_friendly ? 'Yes' : 'No'}</p>
             <p className="text-sm mt-2">
               <a
-                href={\`https://www.google.com/maps/search/?api=1&query=\${encodeURIComponent(r.address)}\`}
+                href={"https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(r.address)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 underline"

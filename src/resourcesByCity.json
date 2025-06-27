@@ -543,199 +543,394 @@
     "lng": -71.4666
   },
 {
-      "name": "Greater Nashua Mental Health",
-      "address": "100 West Pearl St, Nashua, NH 03060",
-      "category": "Mental Health"
-    },
-    {
-      "name": "Harbor Care (Mental Health)",
-      "address": "45 High St, Nashua, NH 03060",
-      "category": "Mental Health"
-    },
-    {
-      "name": "H.E.A.R.T.S Peer Support & Crisis Respite Center",
-      "address": "5 Pine St Ext, Nashua, NH 03060",
-      "category": "Mental Health"
-    },
-    {
-      "name": "The Youth Council",
-      "address": "112 W Pearl St, Nashua, NH 03060",
-      "category": "Mental Health"
-    },
-    {
-      "name": "New Hampshire Veteran\u2019s Services",
-      "address": "275 Chestnut St, Manchester, NH 03101",
-      "category": "Veterans"
-    },
-    {
-      "name": "Harbor Care (Veterans)",
-      "address": "45 High St, Nashua, NH 03060",
-      "category": "Veterans"
-    },
-    {
-      "name": "Support Services for Veteran Families",
-      "address": "77 Northeastern Blvd, Nashua, NH 03062",
-      "category": "Veterans"
-    },
-    {
-      "name": "NH Bureau of Elderly & Adult Services",
-      "address": "105 Pleasant St, Concord, NH 03301",
-      "category": "Senior Services"
-    },
-    {
-      "name": "Nashua Senior Center",
-      "address": "70 Temple St, Nashua, NH 03060",
-      "category": "Senior Services"
-    },
-    {
-      "name": "Social Security Administration",
-      "address": "175 Amherst St, Nashua, NH 03064",
-      "category": "Senior Services"
-    },
-    {
-      "name": "Southern NH Services (Food)",
-      "address": "134 Allds St, Nashua, NH 03060",
-      "category": "Senior Services"
-    },
-    {
-      "name": "Southern NH Services (Housing)",
-      "address": "134 Allds St, Nashua, NH 03060",
-      "category": "Senior Services"
-    },
-    {
-      "name": "ServiceLink",
-      "address": "70 Temple St, Nashua, NH 03060",
-      "category": "Senior Services"
-    },
-    {
-      "name": "The Caregivers (Rides)",
-      "address": "19 Harvey Rd, Bedford, NH 03110",
-      "category": "Transportation"
-    },
-    {
-      "name": "Nashua Transit System",
-      "address": "11 Riverside Dr, Nashua, NH 03062",
-      "category": "Transportation"
-    },
-    {
-      "name": "Nashua Transit Paratransit",
-      "address": "11 Riverside Dr, Nashua, NH 03062",
-      "category": "Transportation"
-    },
-    {
-      "name": "Boston Express Bus",
-      "address": "8 N Southwood Dr, Nashua, NH 03063",
-      "category": "Transportation"
-    },
-    {
-      "name": "Easter Seals (Transport)",
-      "address": "555 Auburn St, Manchester, NH 03103",
-      "category": "Transportation"
-    },
-    {
-      "name": "Regional Mobility Management Program",
-      "address": "20 Broad St, Nashua, NH 03064",
-      "category": "Transportation"
-    },
-    {
-      "name": "Gate City Bike Co-op",
-      "address": "15 School St, Nashua, NH 03060",
-      "category": "Transportation"
-    },
-    {
-      "name": "Nashua School District",
-      "address": "141 Ledge St, Nashua, NH 03060",
-      "category": "Education"
-    },
-    {
-      "name": "Nashua Public Library",
-      "address": "2 Court St, Nashua, NH 03060",
-      "category": "Education"
-    },
-    {
-      "name": "Adult Learning Center",
-      "address": "4 Lake St, Nashua, NH 03060",
-      "category": "Education"
-    },
-    {
-      "name": "Girls Inc.",
-      "address": "27 Burke St, Nashua, NH 03060",
-      "category": "Youth Programs"
-    },
-    {
-      "name": "Boys and Girls Club of Greater Nashua",
-      "address": "1 Positive Pl, Nashua, NH 03060",
-      "category": "Youth Programs"
-    },
-    {
-      "name": "Nashua Police Athletic League (PAL)",
-      "address": "52 Ash St, Nashua, NH 03060",
-      "category": "Youth Programs"
-    },
-    {
-      "name": "Greater Nashua YMCA",
-      "address": "24 Stadium Dr, Nashua, NH 03062",
-      "category": "Youth Programs"
-    },
-    {
-      "name": "21st Century Extended Day",
-      "address": "Multiple school sites",
-      "category": "Youth Programs"
-    },
-    {
-      "name": "United Way of Greater Nashua Tutoring",
-      "address": "20 Broad St, Nashua, NH 03064",
-      "category": "Youth Programs"
-    },
-    {
-      "name": "Arlington Street Community Center",
-      "address": "36 Arlington St, Nashua, NH 03060",
-      "category": "Community Centers"
-    },
-    {
-      "name": "Centro Latino Comunitario",
-      "address": "33 Pine St Ext, Nashua, NH 03060",
-      "category": "Community Centers"
-    },
-    {
-      "name": "New Hampshire Legal Assistance",
-      "address": "117 Manchester St, Concord, NH 03301",
-      "category": "Legal Assistance"
-    },
-    {
-      "name": "Ascentria Care Alliance",
-      "address": "261 Sheep Davis Rd, Concord, NH 03301",
-      "category": "Immigration Support"
-    },
-    {
-      "name": "International Institute of New England",
-      "address": "470 Pine St, Manchester, NH 03104",
-      "category": "Immigration Support"
-    },
-    {
-      "name": "Nashua Division of Public Health & Community Services",
-      "address": "18 Mulberry St, Nashua, NH 03060",
-      "category": "Comprehensive Support"
-    },
-    {
-      "name": "NH Division of Health & Human Services",
-      "address": "105 Pleasant St, Concord, NH 03301",
-      "category": "Comprehensive Support"
-    },
-    {
-      "name": "Waypoint (Child and Family Services)",
-      "address": "113 W Pearl St, Nashua, NH 03060",
-      "category": "Comprehensive Support"
-    },
-    {
-      "name": "Southern NH Services",
-      "address": "134 Allds St, Nashua, NH 03060",
-      "category": "Comprehensive Support"
-    },
-    {
-      "name": "Easter Seals NH",
-      "address": "555 Auburn St, Manchester, NH 03103",
-      "category": "Comprehensive Support"
-    }
+    "name": "Greater Nashua Mental Health",
+    "address": "100 West Pearl St, Nashua, NH 03060",
+    "category": "Mental Health",
+    "open_hours": "Mon–Fri: 8 am–5 pm",
+    "contact": "(603) 889‑6147",
+    "youth_friendly": true,
+    "lat": 42.7608,
+    "lng": -71.4682
+  },
+  {
+    "name": "Harbor Care Clinic and Wellness Center",
+    "address": "45 High St, Nashua, NH 03060",
+    "category": "Mental Health",
+    "open_hours": "Mon–Fri: 8 am–5 pm",
+    "contact": "(603) 821‑7788",
+    "youth_friendly": true,
+    "lat": 42.7605,
+    "lng": -71.4666
+  },
+  {
+    "name": "H.E.A.R.T.S Peer Support & Crisis Respite Center",
+    "address": "5 Pine St Ext, Nashua, NH 03060",
+    "category": "Mental Health",
+    "open_hours": "Mon–Fri: 8 am–5 pm",
+    "contact": "(603) 882‑8400",
+    "youth_friendly": true,
+    "lat": 42.7580,
+    "lng": -71.4660
+  },
+  {
+    "name": "The Youth Council",
+    "address": "112 W Pearl St, Nashua, NH 03060",
+    "category": "Mental Health",
+    "open_hours": "Call for hours",
+    "contact": "Not listed",
+    "youth_friendly": true,
+    "lat": 42.7635,
+    "lng": -71.4670
+  },
+{
+    "name": "New Hampshire Veteran Services Officers",
+    "address": "275 Chestnut St, Manchester, NH 03101",
+    "category": "Veterans",
+    "open_hours": "Mon–Fri: 8 am–4 pm",
+    "contact": "(603) 624‑9230",
+    "youth_friendly": true,
+    "lat": 42.9909,
+    "lng": -71.4653
+  },
+  {
+    "name": "Harbor Care – Supportive Services for Veteran Families",
+    "address": "45 High St, Nashua, NH 03060",
+    "category": "Veterans",
+    "open_hours": "Mon–Fri: 9 am–5 pm",
+    "contact": "(603) 882‑3616",
+    "youth_friendly": true,
+    "lat": 42.7605,
+    "lng": -71.4666
+  },
+  {
+    "name": "Supportive Services for Veteran Families (SSVF)",
+    "address": "45 High St, Nashua, NH 03060",
+    "category": "Veterans",
+    "open_hours": "Mon–Fri: 9 am–5 pm",
+    "contact": "(603) 882‑3616",
+    "youth_friendly": true,
+    "lat": 42.7605,
+    "lng": -71.4666
+  },
+  {
+    "name": "NH Bureau of Elderly & Adult Services",
+    "address": "105 Pleasant St, Concord, NH 03301",
+    "category": "Senior Services",
+    "open_hours": "Mon–Fri: 8 am–4:30 pm",
+    "contact": "(603) 271‑7014",
+    "youth_friendly": false,
+    "lat": 43.2075,
+    "lng": -71.5382
+  },
+  {
+    "name": "Nashua Senior Activity Center",
+    "address": "70 Temple St, Nashua, NH 03060",
+    "category": "Senior Services",
+    "open_hours": "Mon–Fri: 8 am–4 pm",
+    "contact": "(603) 889‑6155",
+    "youth_friendly": false,
+    "lat": 42.7596,
+    "lng": -71.4677
+  },
+  {
+    "name": "Social Security Administration (Nashua)",
+    "address": "175 Amherst St, Nashua, NH 03064",
+    "category": "Senior Services",
+    "open_hours": "Mon, Wed, Fri: 9 am–4 pm; Tue, Thu: 9 am–12 pm",
+    "contact": "(866) 331‑5463",
+    "youth_friendly": false,
+    "lat": 42.7714,
+    "lng": -71.4722
+  },
+  {
+    "name": "Southern NH Services (Food for Seniors)",
+    "address": "134 Allds St, Nashua, NH 03060",
+    "category": "Senior Services",
+    "open_hours": "Mon–Fri: 8:30 am–4:30 pm",
+    "contact": "(603) 889‑3440",
+    "youth_friendly": false,
+    "lat": 42.7498,
+    "lng": -71.4560
+  },
+  {
+    "name": "Southern NH Services (Housing Support)",
+    "address": "134 Allds St, Nashua, NH 03060",
+    "category": "Senior Services",
+    "open_hours": "Mon–Fri: 8:30 am–4:30 pm",
+    "contact": "(603) 889‑3440",
+    "youth_friendly": false,
+    "lat": 42.7498,
+    "lng": -71.4560
+  },
+  {
+    "name": "ServiceLink - Nashua",
+    "address": "70 Temple St, Nashua, NH 03060",
+    "category": "Senior Services",
+    "open_hours": "Mon–Fri: 8 am–4:30 pm",
+    "contact": "(877) 767‑2494",
+    "youth_friendly": false,
+    "lat": 42.7596,
+    "lng": -71.4677
+  },
+{
+    "name": "The Caregivers (Rides & Grocery Delivery)",
+    "address": "19 Harvey Road, Bedford, NH 03110",
+    "category": "Transportation",
+    "open_hours": "Mon–Fri: 8 am–5 pm",
+    "contact": "(603) 622‑4948",
+    "youth_friendly": true,
+    "lat": 42.9423,
+    "lng": -71.5131
+  },
+  {
+    "name": "Nashua Transit System",
+    "address": "11 Riverside Drive, Nashua, NH 03062",
+    "category": "Transportation",
+    "open_hours": "Mon–Sat: 5 am–11 pm",
+    "contact": "(603) 821‑2049",
+    "youth_friendly": true,
+    "lat": 42.7770,
+    "lng": -71.5081
+  },
+  {
+    "name": "Nashua Transit Paratransit",
+    "address": "11 Riverside Drive, Nashua, NH 03062",
+    "category": "Transportation",
+    "open_hours": "Mon–Fri: 6 am–9 pm",
+    "contact": "(603) 821‑2049",
+    "youth_friendly": true,
+    "lat": 42.7770,
+    "lng": -71.5081
+  },
+  {
+    "name": "Boston Express Bus",
+    "address": "8 N Southwood Drive, Nashua, NH 03063",
+    "category": "Transportation",
+    "open_hours": "Mon–Sat: 3 am–11 pm",
+    "contact": "(877) 768‑2320",
+    "youth_friendly": true,
+    "lat": 42.8051,
+    "lng": -71.5528
+  },
+  {
+    "name": "Easter Seals (Transport Services)",
+    "address": "555 Auburn St, Manchester, NH 03103",
+    "category": "Transportation",
+    "open_hours": "Mon–Fri: 8 am–5 pm",
+    "contact": "(603) 668‑4663",
+    "youth_friendly": true,
+    "lat": 42.9880,
+    "lng": -71.4568
+  },
+  {
+    "name": "Regional Mobility Management Program",
+    "address": "20 Broad St, Nashua, NH 03064",
+    "category": "Transportation",
+    "open_hours": "Mon–Fri: 8 am–5 pm",
+    "contact": "(603) 882‑4011",
+    "youth_friendly": true,
+    "lat": 42.7672,
+    "lng": -71.4704
+  },
+{
+  "name": "Gate City Bike Co‑op",
+  "address": "15 School St, Nashua, NH 03060",
+  "category": "Transportation",
+  "open_hours": "Wed–Sat: 10 am–2 pm",
+  "contact": "(603) 598‑6743",
+  "youth_friendly": true,
+  "lat": 42.7562,
+  "lng": -71.4679
+},
+{
+    "name": "Nashua School District",
+    "address": "141 Ledge St, Nashua, NH 03060",
+    "category": "Education",
+    "open_hours": "Mon–Fri: 7:30 am–4 pm",
+    "contact": "(603) 966‑1000",
+    "youth_friendly": true,
+    "lat": 42.7550,
+    "lng": -71.4772
+  },
+  {
+    "name": "Nashua Public Library",
+    "address": "2 Court St, Nashua, NH 03060",
+    "category": "Education",
+    "open_hours": "Mon–Thu: 9 am–8 pm; Fri–Sat: 9 am–5 pm",
+    "contact": "(603) 589‑4610",
+    "youth_friendly": true,
+    "lat": 42.7642,
+    "lng": -71.4654
+  },
+  {
+    "name": "Adult Learning Center",
+    "address": "4 Lake St, Nashua, NH 03060",
+    "category": "Education",
+    "open_hours": "Mon–Fri: 8 am–4 pm",
+    "contact": "(603) 882‑9080",
+    "youth_friendly": true,
+    "lat": 42.7547,
+    "lng": -71.4655
+  },
+  {
+    "name": "Girls Inc. of Nashua",
+    "address": "27 Burke St, Nashua, NH 03060",
+    "category": "Youth Programs",
+    "open_hours": "Mon–Fri: 9 am–5 pm",
+    "contact": "(603) 889‑6135",
+    "youth_friendly": true,
+    "lat": 42.7632,
+    "lng": -71.4670
+  },
+  {
+    "name": "Boys & Girls Club of Greater Nashua",
+    "address": "1 Positive Place, Nashua, NH 03060",
+    "category": "Youth Programs",
+    "open_hours": "Mon–Fri: 9 am–6 pm",
+    "contact": "(603) 889‑9622",
+    "youth_friendly": true,
+    "lat": 42.7660,
+    "lng": -71.4659
+  },
+  {
+    "name": "Nashua PAL (Police Athletic League)",
+    "address": "52 Ash St, Nashua, NH 03060",
+    "category": "Youth Programs",
+    "open_hours": "After school hours",
+    "contact": "(603) 594‑3579",
+    "youth_friendly": true,
+    "lat": 42.7639,
+    "lng": -71.4691
+  },
+  {
+    "name": "Greater Nashua YMCA",
+    "address": "24 Stadium Dr, Nashua, NH 03062",
+    "category": "Youth Programs",
+    "open_hours": "Mon–Fri: 5 am–10 pm; Sat–Sun: 6 am–8 pm",
+    "contact": "(603) 882‑0191",
+    "youth_friendly": true,
+    "lat": 42.7190,
+    "lng": -71.4405
+  },
+  {
+    "name": "21st Century Extended Day Program",
+    "address": "Multiple Nashua school sites",
+    "category": "Youth Programs",
+    "open_hours": "After school & summer",
+    "contact": "(603) 966‑6840",
+    "youth_friendly": true,
+    "lat": 42.7550,
+    "lng": -71.4772
+  },
+  {
+    "name": "United Way Tutoring",
+    "address": "20 Broad St, Nashua, NH 03064",
+    "category": "Youth Programs",
+    "open_hours": "Call for schedule",
+    "contact": "(603) 882‑4011",
+    "youth_friendly": true,
+    "lat": 42.7672,
+    "lng": -71.4704
+  },
+{
+    "name": "Arlington Street Community Center",
+    "address": "36 Arlington St, Nashua, NH 03060",
+    "category": "Community Centers",
+    "open_hours": "Mon–Fri: 9 am–4 pm",
+    "contact": "(603) 589‑4975",
+    "youth_friendly": true,
+    "lat": 42.7621,
+    "lng": -71.4684
+  },
+  {
+    "name": "Centro Latino Comunitario",
+    "address": "33 Pine St Ext, Nashua, NH 03060",
+    "category": "Community Centers",
+    "open_hours": "Mon–Fri: 9 am–5 pm",
+    "contact": "(603) 889‑7700",
+    "youth_friendly": true,
+    "lat": 42.7593,
+    "lng": -71.4667
+  },
+  {
+    "name": "New Hampshire Legal Assistance",
+    "address": "117 Manchester St, Concord, NH 03301",
+    "category": "Legal Assistance",
+    "open_hours": "Mon–Fri: 8 am–5 pm",
+    "contact": "(800) 639‑5290",
+    "youth_friendly": true,
+    "lat": 43.2070,
+    "lng": -71.5301
+  },
+  {
+    "name": "Ascentria Care Alliance",
+    "address": "261 Sheep Davis Rd, Concord, NH 03301",
+    "category": "Immigration Support",
+    "open_hours": "Mon–Fri: 8 am–5 pm",
+    "contact": "(603) 230‑8909",
+    "youth_friendly": true,
+    "lat": 43.2117,
+    "lng": -71.5430
+  },
+  {
+    "name": "International Institute of New England",
+    "address": "470 Pine St, Manchester, NH 03104",
+    "category": "Immigration Support",
+    "open_hours": "Mon–Fri: 8 am–4 pm",
+    "contact": "(800) 639‑5056",
+    "youth_friendly": true,
+    "lat": 42.9915,
+    "lng": -71.4580
+  },
+  {
+    "name": "Nashua Division of Public Health & Community Services",
+    "address": "18 Mulberry St, Nashua, NH 03060",
+    "category": "Comprehensive Support",
+    "open_hours": "Mon–Fri: 8 am–5 pm",
+    "contact": "(603) 589‑4517",
+    "youth_friendly": true,
+    "lat": 42.7644,
+    "lng": -71.4691
+  },
+  {
+    "name": "NH Division of Health & Human Services",
+    "address": "105 Pleasant St, Concord, NH 03301",
+    "category": "Comprehensive Support",
+    "open_hours": "Mon–Fri: 8 am–5 pm",
+    "contact": "(800) 852‑3345",
+    "youth_friendly": true,
+    "lat": 43.2075,
+    "lng": -71.5382
+  },
+  {
+    "name": "Waypoint (Child & Family Services of NH)",
+    "address": "113 W Pearl St, Nashua, NH 03060",
+    "category": "Comprehensive Support",
+    "open_hours": "Mon–Fri: 8 am–5 pm",
+    "contact": "(603) 669‑5558",
+    "youth_friendly": true,
+    "lat": 42.7649,
+    "lng": -71.4683
+  },
+  {
+    "name": "Southern NH Services",
+    "address": "134 Allds St, Nashua, NH 03060",
+    "category": "Comprehensive Support",
+    "open_hours": "Mon–Fri: 8:30 am–4:30 pm",
+    "contact": "(603) 889‑3440",
+    "youth_friendly": true,
+    "lat": 42.7498,
+    "lng": -71.4560
+  },
+  {
+    "name": "Easter Seals NH",
+    "address": "555 Auburn St, Manchester, NH 03103",
+    "category": "Comprehensive Support",
+    "open_hours": "Mon–Fri: 8 am–5 pm",
+    "contact": "(603) 668‑4663",
+    "youth_friendly": true,
+    "lat": 42.9880,
+    "lng": -71.4568
+  }
   ]
 }

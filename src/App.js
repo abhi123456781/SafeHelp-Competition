@@ -9,22 +9,26 @@ function App() {
 
   const resources = data[selectedCity];
   const categories = ['All', ...Array.from(new Set(resources.map(r => r.category)))];
-  const filteredResources = selectedCategory === 'All'
-    ? resources
-    : resources.filter(r => r.category === selectedCategory);
+
+  const filteredResources =
+    selectedCategory === 'All'
+      ? resources
+      : resources.filter(r => r.category === selectedCategory);
 
   return (
     <div className="min-h-screen bg-gray-50 p-4">
       <header className="text-center mb-6">
-        <h1 className="text-3xl font-bold text-blue-700">SafeHelp {selectedCity.replace('-', ' ').toUpperCase()}</h1>
-        <p className="text-gray-600 mb-4">Find free local food, shelter, and support services</p>
+        <h1 className="text-3xl font-bold text-blue-700">SafeHelp NE</h1>
+        <p className="text-gray-600 mb-4">
+          Find free local food, shelter, and support services across New England
+        </p>
 
-        {/* City Selector (prep for future cities) */}
-        <div className="mb-4">
+        {/* City Selector + Submission Button */}
+        <div className="mb-4 flex flex-col items-center">
           <select
             value={selectedCity}
             onChange={(e) => setSelectedCity(e.target.value)}
-            className="px-4 py-2 border rounded text-blue-700"
+            className="px-4 py-2 border rounded text-blue-700 mb-2"
           >
             {Object.keys(data).map((city, i) => (
               <option key={i} value={city}>
@@ -32,6 +36,15 @@ function App() {
               </option>
             ))}
           </select>
+
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeh7viSbU-5DT_9XzBUHczUpByAhi8Ve1zE0I8FZSUtbTAZ-Q/viewform?usp=dialog"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-4 py-2 mt-2 text-sm text-white bg-blue-600 rounded hover:bg-blue-700"
+          >
+            ➕ Submit a New Resource
+          </a>
         </div>
 
         {/* Category Filters */}
@@ -52,8 +65,10 @@ function App() {
         </div>
       </header>
 
-      {/* Map + Resource Cards */}
+      {/* Map with Pins */}
       <MapView resources={filteredResources} />
+
+      {/* Resource Cards */}
       <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
         {filteredResources.map((r, i) => (
           <div key={i} className="bg-white rounded-xl shadow p-4">

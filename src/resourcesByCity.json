@@ -1,184 +1,184 @@
 {
   "resources": [
     {
-    "name": "Nashua Soup Kitchen and Shelter",
-    "address": "2 Quincy Street, Nashua, NH 03060",
-    "category": "Food",
-    "open_hours": "Mon–Fri: 8am–6pm",
-    "contact": "(603) 889-7770",
-    "youth_friendly": true,
-    "lat": 42.7611,
-    "lng": -71.4672
-  },
-  {
-    "name": "Corpus Christi Food Pantry",
-    "address": "3 Crown Street, Nashua, NH 03060",
-    "category": "Food",
-    "open_hours": "Call for hours",
-    "contact": "(603) 882-6372",
-    "youth_friendly": true,
-    "lat": 42.7600,
-    "lng": -71.4651
-  },
-  {
-    "name": "Southern NH Rescue Mission",
-    "address": "40 Chestnut Street, Nashua, NH 03060",
-    "category": "Food",
-    "open_hours": "Call for meals & pantry hours",
-    "contact": "(603) 889-3421",
-    "youth_friendly": true,
-    "lat": 42.7596,
-    "lng": -71.4615
-  },
-  {
-    "name": "Salvation Army Nashua",
-    "address": "1 Montgomery Avenue, Nashua, NH 03060",
-    "category": "Food",
-    "open_hours": "Mon–Fri: 9am–3pm",
-    "contact": "(603) 889-5151",
-    "youth_friendly": true,
-    "lat": 42.7589,
-    "lng": -71.4667
-  },
-  {
-    "name": "Tolles Street Mission",
-    "address": "52 Whitney Street, Nashua, NH 03064",
-    "category": "Food",
-    "open_hours": "Tue–Thu: 9am–12pm",
-    "contact": "(603) 880-4984",
-    "youth_friendly": true,
-    "lat": 42.7683,
-    "lng": -71.4702
-  },
-  {
-    "name": "United Way Pop-Up Pantries",
-    "address": "Varies - Check Website",
-    "category": "Food",
-    "open_hours": "Pop-up schedule online",
-    "contact": "(603) 882-4011",
-    "youth_friendly": true,
-    "lat": 42.7638,
-    "lng": -71.4671
-  },
-  {
-    "name": "St. John Neumann Food Pantry",
-    "address": "708 Milford Rd, Merrimack, NH 03054",
-    "category": "Food",
-    "open_hours": "2nd and 4th Sat of month",
-    "contact": "(603) 880-4689",
-    "youth_friendly": true,
-    "lat": 42.8453,
-    "lng": -71.5022
-  },
-  {
-    "name": "Merrimack Methodist Food Pantry",
-    "address": "430 Daniel Webster Hwy, Merrimack, NH 03054",
-    "category": "Food",
-    "open_hours": "Last Sat of month 9–11am",
-    "contact": "(603) 424-7459",
-    "youth_friendly": true,
-    "lat": 42.8606,
-    "lng": -71.4932
-  },
-  {
-    "name": "Hudson Food Pantry",
-    "address": "23 Library St, Hudson, NH 03051",
-    "category": "Food",
-    "open_hours": "Tue: 9am–2pm, Thu: 4–6pm",
-    "contact": "(603) 882-1460",
-    "youth_friendly": true,
-    "lat": 42.7632,
-    "lng": -71.4358
-  },
-  {
-    "name": "SHARE Outreach",
-    "address": "1 Columbus Ave, Milford, NH 03055",
-    "category": "Food",
-    "open_hours": "Mon–Thu: 8:30am–4:30pm",
-    "contact": "(603) 673-9898",
-    "youth_friendly": true,
-    "lat": 42.8358,
-    "lng": -71.6526
-  },
-  {
-    "name": "Trinity Baptist Food Pantry",
-    "address": "3 Lund Rd, Nashua, NH 03060",
-    "category": "Food",
-    "open_hours": "1st and 3rd Sat of month 9am",
-    "contact": "(603) 888-9990",
-    "youth_friendly": true,
-    "lat": 42.7478,
-    "lng": -71.4460
-  },
-  {
-    "name": "Grace Lutheran Church Food Pantry",
-    "address": "130 Spit Brook Rd, Nashua, NH 03062",
-    "category": "Food",
-    "open_hours": "1st & 3rd Thursdays: 6:30–7:30pm",
-    "contact": "(603) 888-7579",
-    "youth_friendly": true,
-    "lat": 42.7145,
-    "lng": -71.4565
-  },
-  {
-    "name": "End 68 Hours of Hunger – Nashua",
-    "address": "Nashua School District",
-    "category": "Food",
-    "open_hours": "Call to participate",
-    "contact": "(603) 589-2052",
-    "youth_friendly": true,
-    "lat": 42.7635,
-    "lng": -71.4670
-  },
-  {
-    "name": "Unitarian Universalist Church",
-    "address": "58 Lowell St, Nashua, NH 03064",
-    "category": "Food",
-    "open_hours": "Community meals posted online",
-    "contact": "(603) 882-1091",
-    "youth_friendly": true,
-    "lat": 42.7663,
-    "lng": -71.4659
-  },
-  {
-    "name": "The Caregivers, Inc.",
-    "address": "19 Harvey Road, Bedford, NH 03110",
-    "category": "Food",
-    "open_hours": "Grocery delivery – call for details",
-    "contact": "(603) 622-4948",
-    "youth_friendly": true,
-    "lat": 42.9423,
-    "lng": -71.5131
-  },
-  {
-    "name": "Meals on Wheels of Hillsborough County",
-    "address": "395 Daniel Webster Hwy, Merrimack, NH 03054",
-    "category": "Food",
-    "open_hours": "Call for eligibility",
-    "contact": "(603) 424-9967",
-    "youth_friendly": true,
-    "lat": 42.8510,
-    "lng": -71.4876
-  },
-  {
-    "name": "Nashua Church of Christ Food Pantry",
-    "address": "97 Farley Rd, Nashua, NH 03062",
-    "category": "Food",
-    "open_hours": "Call for times",
-    "contact": "(603) 889-5631",
-    "youth_friendly": true,
-    "lat": 42.7480,
-    "lng": -71.5084
-  },
-  {
-    "name": "Heritage Baptist Church Food Pantry",
-    "address": "105 Lock St, Nashua, NH 03064",
-    "category": "Food",
-    "open_hours": "Call for availability",
-    "contact": "(603) 889-4426",
-    "youth_friendly": true,
-    "lat": 42.7711,
-    "lng": -71.4710
-  }
+      "name": "Nashua Soup Kitchen and Shelter",
+      "address": "2 Quincy Street, Nashua, NH 03060",
+      "category": "Food",
+      "open_hours": "Mon–Fri: 8am–6pm",
+      "contact": "(603) 889-7770",
+      "youth_friendly": true,
+      "lat": 42.7611,
+      "lng": -71.4672
+    },
+    {
+      "name": "Corpus Christi Food Pantry",
+      "address": "3 Crown Street, Nashua, NH 03060",
+      "category": "Food",
+      "open_hours": "Call for hours",
+      "contact": "(603) 882-6372",
+      "youth_friendly": true,
+      "lat": 42.76,
+      "lng": -71.4651
+    },
+    {
+      "name": "Southern NH Rescue Mission",
+      "address": "40 Chestnut Street, Nashua, NH 03060",
+      "category": "Food",
+      "open_hours": "Call for meals & pantry hours",
+      "contact": "(603) 889-3421",
+      "youth_friendly": true,
+      "lat": 42.7596,
+      "lng": -71.4615
+    },
+    {
+      "name": "Salvation Army Nashua",
+      "address": "1 Montgomery Avenue, Nashua, NH 03060",
+      "category": "Food",
+      "open_hours": "Mon–Fri: 9am–3pm",
+      "contact": "(603) 889-5151",
+      "youth_friendly": true,
+      "lat": 42.7589,
+      "lng": -71.4667
+    },
+    {
+      "name": "Tolles Street Mission",
+      "address": "52 Whitney Street, Nashua, NH 03064",
+      "category": "Food",
+      "open_hours": "Tue–Thu: 9am–12pm",
+      "contact": "(603) 880-4984",
+      "youth_friendly": true,
+      "lat": 42.7683,
+      "lng": -71.4702
+    },
+    {
+      "name": "United Way Pop-Up Pantries",
+      "address": "Varies - Check Website",
+      "category": "Food",
+      "open_hours": "Pop-up schedule online",
+      "contact": "(603) 882-4011",
+      "youth_friendly": true,
+      "lat": 42.7638,
+      "lng": -71.4671
+    },
+    {
+      "name": "St. John Neumann Food Pantry",
+      "address": "708 Milford Rd, Merrimack, NH 03054",
+      "category": "Food",
+      "open_hours": "2nd and 4th Sat of month",
+      "contact": "(603) 880-4689",
+      "youth_friendly": true,
+      "lat": 42.8453,
+      "lng": -71.5022
+    },
+    {
+      "name": "Merrimack Methodist Food Pantry",
+      "address": "430 Daniel Webster Hwy, Merrimack, NH 03054",
+      "category": "Food",
+      "open_hours": "Last Sat of month 9–11am",
+      "contact": "(603) 424-7459",
+      "youth_friendly": true,
+      "lat": 42.8606,
+      "lng": -71.4932
+    },
+    {
+      "name": "Hudson Food Pantry",
+      "address": "23 Library St, Hudson, NH 03051",
+      "category": "Food",
+      "open_hours": "Tue: 9am–2pm, Thu: 4–6pm",
+      "contact": "(603) 882-1460",
+      "youth_friendly": true,
+      "lat": 42.7632,
+      "lng": -71.4358
+    },
+    {
+      "name": "SHARE Outreach",
+      "address": "1 Columbus Ave, Milford, NH 03055",
+      "category": "Food",
+      "open_hours": "Mon–Thu: 8:30am–4:30pm",
+      "contact": "(603) 673-9898",
+      "youth_friendly": true,
+      "lat": 42.8358,
+      "lng": -71.6526
+    },
+    {
+      "name": "Trinity Baptist Food Pantry",
+      "address": "3 Lund Rd, Nashua, NH 03060",
+      "category": "Food",
+      "open_hours": "1st and 3rd Sat of month 9am",
+      "contact": "(603) 888-9990",
+      "youth_friendly": true,
+      "lat": 42.7478,
+      "lng": -71.446
+    },
+    {
+      "name": "Grace Lutheran Church Food Pantry",
+      "address": "130 Spit Brook Rd, Nashua, NH 03062",
+      "category": "Food",
+      "open_hours": "1st & 3rd Thursdays: 6:30–7:30pm",
+      "contact": "(603) 888-7579",
+      "youth_friendly": true,
+      "lat": 42.7145,
+      "lng": -71.4565
+    },
+    {
+      "name": "End 68 Hours of Hunger – Nashua",
+      "address": "Nashua School District",
+      "category": "Food",
+      "open_hours": "Call to participate",
+      "contact": "(603) 589-2052",
+      "youth_friendly": true,
+      "lat": 42.7635,
+      "lng": -71.467
+    },
+    {
+      "name": "Unitarian Universalist Church",
+      "address": "58 Lowell St, Nashua, NH 03064",
+      "category": "Food",
+      "open_hours": "Community meals posted online",
+      "contact": "(603) 882-1091",
+      "youth_friendly": true,
+      "lat": 42.7663,
+      "lng": -71.4659
+    },
+    {
+      "name": "The Caregivers, Inc.",
+      "address": "19 Harvey Road, Bedford, NH 03110",
+      "category": "Food",
+      "open_hours": "Grocery delivery – call for details",
+      "contact": "(603) 622-4948",
+      "youth_friendly": true,
+      "lat": 42.9423,
+      "lng": -71.5131
+    },
+    {
+      "name": "Meals on Wheels of Hillsborough County",
+      "address": "395 Daniel Webster Hwy, Merrimack, NH 03054",
+      "category": "Food",
+      "open_hours": "Call for eligibility",
+      "contact": "(603) 424-9967",
+      "youth_friendly": true,
+      "lat": 42.851,
+      "lng": -71.4876
+    },
+    {
+      "name": "Nashua Church of Christ Food Pantry",
+      "address": "97 Farley Rd, Nashua, NH 03062",
+      "category": "Food",
+      "open_hours": "Call for times",
+      "contact": "(603) 889-5631",
+      "youth_friendly": true,
+      "lat": 42.748,
+      "lng": -71.5084
+    },
+    {
+      "name": "Heritage Baptist Church Food Pantry",
+      "address": "105 Lock St, Nashua, NH 03064",
+      "category": "Food",
+      "open_hours": "Call for availability",
+      "contact": "(603) 889-4426",
+      "youth_friendly": true,
+      "lat": 42.7711,
+      "lng": -71.471
+    }
   ]
 }

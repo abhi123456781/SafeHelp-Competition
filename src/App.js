@@ -20,6 +20,7 @@ function App() {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [userLocation, setUserLocation] = useState(null);
   const [locationError, setLocationError] = useState(false);
+  const [mapCenter, setMapCenter] = useState(null);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -28,16 +29,36 @@ function App() {
           lat: position.coords.latitude,
           lng: position.coords.longitude,
         });
+        setMapCenter([position.coords.latitude, position.coords.longitude]);
       },
       () => {
         console.warn('Geolocation failed or not allowed');
         setLocationError(true);
+        setMapCenter([42.7653, -71.4676]); // Default to Nashua
       }
     );
   }, []);
 
   const resources = data.resources;
   const categories = ['All', ...Array.from(new Set(resources.map(r => r.category)))];
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+
+    const matching =
+      category === 'All'
+        ? resources
+        : resources.filter(r => r.category === category);
+
+    if (userLocation && matching.length > 0) {
+      const closest = matching.reduce((a, b) => {
+        const dA = calculateDistance(userLocation.lat, userLocation.lng, a.lat, a.lng);
+        const dB = calculateDistance(userLocation.lat, userLocation.lng, b.lat, b.lng);
+        return dA < dB ? a : b;
+      });
+      setMapCenter([closest.lat, closest.lng]);
+    }
+  };
 
   let filteredResources =
     selectedCategory === 'All'
@@ -78,7 +99,7 @@ function App() {
           {categories.map((cat, i) => (
             <button
               key={i}
-              onClick={() => setSelectedCategory(cat)}
+              onClick={() => handleCategoryClick(cat)}
               className={`px-4 py-1 rounded-full text-sm border transition ${
                 selectedCategory === cat
                   ? 'bg-blue-600 text-white border-blue-600'
@@ -91,7 +112,7 @@ function App() {
         </div>
       </header>
 
-      <MapView resources={filteredResources} userLocation={userLocation} />
+      <MapView resources={filteredResources} userLocation={userLocation} mapCenter={mapCenter} />
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
         {filteredResources.map((r, i) => (

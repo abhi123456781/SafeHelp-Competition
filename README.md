@@ -1,5 +1,5 @@
 
-# SafeHelp
+# SafeHelp NH
 
 **SafeHelp Nashua** is a public web app designed to help individuals and families in the Nashua, New Hampshire area quickly find **free, local support services** such as food assistance, shelters, crisis support, and mental health care.
 

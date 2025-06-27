@@ -179,6 +179,57 @@
       "youth_friendly": true,
       "lat": 42.7711,
       "lng": -71.471
-    }
+    },
+
+  {
+    "name": "Salvation Army Nashua (Thrift Store)",
+    "address": "217 W Hollis St, Nashua, NH 03060",
+    "category": "Clothing",
+    "open_hours": "Mon–Sat: 9am–5pm",
+    "contact": "(603) 889-5151",
+    "youth_friendly": true,
+    "lat": 42.7503,
+    "lng": -71.4740
+  },
+  {
+    "name": "SHARE Outreach Clothing Barn",
+    "address": "1 Columbus Ave, Milford, NH 03055",
+    "category": "Clothing",
+    "open_hours": "Mon–Thu: 8:30am–4:30pm",
+    "contact": "(603) 673-9898",
+    "youth_friendly": true,
+    "lat": 42.8358,
+    "lng": -71.6526
+  },
+  {
+    "name": "Grey Nuns Thrift Shop",
+    "address": "St. Joseph Hospital Campus, 172 Kinsley St, Nashua, NH 03060",
+    "category": "Clothing",
+    "open_hours": "Wed–Fri: 10am–3pm",
+    "contact": "(603) 882-3000",
+    "youth_friendly": true,
+    "lat": 42.7552,
+    "lng": -71.4808
+  },
+  {
+    "name": "Merrimack Methodist Clothes Closet",
+    "address": "430 Daniel Webster Hwy, Merrimack, NH 03054",
+    "category": "Clothing",
+    "open_hours": "Last Sat of month 9–11am",
+    "contact": "(603) 424-7459",
+    "youth_friendly": true,
+    "lat": 42.8606,
+    "lng": -71.4932
+  },
+  {
+    "name": "Southern NH Rescue Mission Clothing Ministry",
+    "address": "40 Chestnut Street, Nashua, NH 03060",
+    "category": "Clothing",
+    "open_hours": "Call for availability",
+    "contact": "(603) 889-3421",
+    "youth_friendly": true,
+    "lat": 42.7596,
+    "lng": -71.4615
+  }
   ]
 }

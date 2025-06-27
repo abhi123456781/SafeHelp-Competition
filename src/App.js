@@ -1,11 +1,39 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './index.css';
 import data from './resourcesByCity.json';
 import MapView from './MapView';
 
+function calculateDistance(lat1, lon1, lat2, lon2) {
+  const toRad = (value) => (value * Math.PI) / 180;
+  const R = 6371; // Radius of Earth in km
+  const dLat = toRad(lat2 - lat1);
+  const dLon = toRad(lon2 - lon1);
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+    Math.sin(dLon / 2) * Math.sin(dLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c * 0.621371; // Convert to miles
+}
+
 function App() {
   const [selectedCity, setSelectedCity] = useState('nashua-nh');
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [userLocation, setUserLocation] = useState(null);
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        setUserLocation({
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        });
+      },
+      () => {
+        console.warn('Geolocation failed or not allowed');
+      }
+    );
+  }, []);
 
   const resources = data[selectedCity];
   const categories = ['All', ...Array.from(new Set(resources.map(r => r.category)))];
@@ -17,12 +45,10 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-800 p-4">
-      {/* Header */}
       <header className="text-center mb-6">
         <h1 className="text-3xl font-bold text-blue-700 mb-2">🛟 SafeHelp NE</h1>
         <p className="text-gray-600 text-lg mb-4">Find free food, shelter, and support near you.</p>
 
-        {/* City Selector and Submit Button */}
         <div className="flex flex-col sm:flex-row justify-center gap-3 mb-4">
           <select
             value={selectedCity}
@@ -46,7 +72,6 @@ function App() {
           </a>
         </div>
 
-        {/* Category Filters */}
         <div className="flex flex-wrap justify-center gap-2 mb-4">
           {categories.map((cat, i) => (
             <button
@@ -64,31 +89,38 @@ function App() {
         </div>
       </header>
 
-      {/* Map View */}
-      <MapView resources={filteredResources} />
+      <MapView resources={filteredResources} userLocation={userLocation} />
 
-      {/* Resource Cards */}
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
-        {filteredResources.map((r, i) => (
-          <div key={i} className="bg-white rounded-xl shadow p-5">
-            <h2 className="text-lg font-semibold text-gray-900">{r.name}</h2>
-            <p className="text-sm text-gray-600">{r.address}</p>
-            <p className="text-sm"><strong>Category:</strong> {r.category}</p>
-            <p className="text-sm"><strong>Hours:</strong> {r.open_hours}</p>
-            <p className="text-sm"><strong>Contact:</strong> {r.contact}</p>
-            <p className="text-sm"><strong>Youth Friendly:</strong> {r.youth_friendly ? 'Yes' : 'No'}</p>
-            <p className="text-sm mt-2">
-              <a
-                href={"https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(r.address)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 underline"
-              >
-                View on Google Maps
-              </a>
-            </p>
-          </div>
-        ))}
+        {filteredResources.map((r, i) => {
+          const distance = userLocation
+            ? calculateDistance(userLocation.lat, userLocation.lng, r.lat, r.lng).toFixed(1)
+            : null;
+
+          return (
+            <div key={i} className="bg-white rounded-xl shadow p-5">
+              <h2 className="text-lg font-semibold text-gray-900">{r.name}</h2>
+              <p className="text-sm text-gray-600">{r.address}</p>
+              <p className="text-sm"><strong>Category:</strong> {r.category}</p>
+              <p className="text-sm"><strong>Hours:</strong> {r.open_hours}</p>
+              <p className="text-sm"><strong>Contact:</strong> {r.contact}</p>
+              <p className="text-sm"><strong>Youth Friendly:</strong> {r.youth_friendly ? 'Yes' : 'No'}</p>
+              {distance && (
+                <p className="text-sm"><strong>Distance:</strong> {distance} miles</p>
+              )}
+              <p className="text-sm mt-2">
+                <a
+                  href={"https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(r.address)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 underline"
+                >
+                  View on Google Maps
+                </a>
+              </p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

@@ -46,7 +46,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-800 p-4">
       <header className="text-center mb-6">
-        <h1 className="text-3xl font-bold text-blue-700 mb-2">🛟 SafeHelp NE</h1>
+        <h1 className="text-3xl font-bold text-blue-700 mb-2">SafeHelp NE</h1>
         <p className="text-gray-600 text-lg mb-4">Find free food, shelter, and support near you.</p>
 
         <div className="flex flex-col sm:flex-row justify-center gap-3 mb-4">

@@ -1,6 +1,8 @@
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import { Icon } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
+
 const emojiIcons = {
   "Food": "\ud83c\udf4e",
   "Shelter": "\ud83c\udfe0",
@@ -30,7 +32,6 @@ const getEmojiIcon = (category) => {
   });
 };
 
-import L from 'leaflet';
 
 
 
@@ -69,7 +70,7 @@ export default function MapView({ resources, userLocation, mapCenter }) {
             <Popup>You are here</Popup>
           </Marker>
         )}
-        {resources.map((r, i) => (
+        {resources.map(((r, i) ) => (
           <Marker
             key={i}
             position={[r.lat, r.lng]}

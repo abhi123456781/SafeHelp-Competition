@@ -3,22 +3,26 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
 const emojiIcons = {
-  Food: '🍽️',
-  Shelter: '🏠',
-  'Mental Health': '🧠',
-  'Health & Wellness': '❤️',
-  'Support Services': '🤝',
-  'Crisis Support': '📞',
-  'Youth Programs': '🧒',
-  'Community Centers': '🏢',
-  Education: '📚',
-  Transportation: '🚌',
-  'Senior Services': '👴',
-  Veterans: '🎖️',
-  'Legal Assistance': '⚖️',
-  'Immigration Support': '🛂',
-  'Comprehensive Support': '🌐',
-  default: '📍'
+  "Food": "🍎",
+  "Shelter": "🏠",
+  "Mental Health": "🧠",
+  "Health & Wellness": "🏥",
+  "Support Services": "🧩",
+  "Crisis Support": "📞",
+  "Youth Programs": "👧",
+  "Community Centers": "🧑‍🤝‍🧑",
+  "Education": "📚",
+  "Transportation": "🚌",
+  "Senior Services": "👴",
+  "Veterans": "🎖",
+  "Legal Assistance": "⚖️",
+  "Immigration Support": "🌎",
+  "Comprehensive Support": "🧭",
+  "Clothing": "👕",
+  "Furniture & Household": "🛋️",
+  "Employment Assistance": "💼",
+  "Housing & Homelessness": "🏘️",
+  "default": "📍"
 };
 
 const getEmojiIcon = (category, id) => {

@@ -1,0 +1,34 @@
+{
+  "nashua-nh": [
+    {
+      "name": "Nashua Soup Kitchen & Shelter",
+      "address": "2 Quincy St, Nashua, NH 03060",
+      "category": "Food",
+      "open_hours": "Mon\u2013Fri: 8am\u20136pm",
+      "contact": "(603) 889-7770",
+      "youth_friendly": true,
+      "lat": 42.7576,
+      "lng": -71.4639
+    },
+    {
+      "name": "Corpus Christi Food Pantry",
+      "address": "3 Crown St, Nashua, NH 03060",
+      "category": "Food",
+      "open_hours": "Mon & Wed: 10am\u20131pm, Fri: 10am\u201312pm",
+      "contact": "(603) 882-6372",
+      "youth_friendly": true,
+      "lat": 42.7659,
+      "lng": -71.4605
+    },
+    {
+      "name": "The Salvation Army \u2013 Nashua",
+      "address": "1 Montgomery Ave, Nashua, NH 03060",
+      "category": "Food",
+      "open_hours": "Mon\u2013Fri: 9am\u20132pm",
+      "contact": "(603) 889-5151",
+      "youth_friendly": true,
+      "lat": 42.7596,
+      "lng": -71.4683
+    }
+  ]
+}

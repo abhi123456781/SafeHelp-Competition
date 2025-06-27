@@ -1,27 +1,40 @@
 import { useState } from 'react';
 import './index.css';
-import resources from './resources.json';
+import data from './resourcesByCity.json';
 import MapView from './MapView';
 
 function App() {
+  const [selectedCity, setSelectedCity] = useState('nashua-nh');
   const [selectedCategory, setSelectedCategory] = useState('All');
 
+  const resources = data[selectedCity];
   const categories = ['All', ...Array.from(new Set(resources.map(r => r.category)))];
-
-  const filteredResources =
-    selectedCategory === 'All'
-      ? resources
-      : resources.filter(r => r.category === selectedCategory);
+  const filteredResources = selectedCategory === 'All'
+    ? resources
+    : resources.filter(r => r.category === selectedCategory);
 
   return (
     <div className="min-h-screen bg-gray-50 p-4">
       <header className="text-center mb-6">
-        <h1 className="text-3xl font-bold text-blue-700">SafeHelp Nashua</h1>
-        <p className="text-gray-600 mb-4">
-          Find free local food, shelter, and support services
-        </p>
+        <h1 className="text-3xl font-bold text-blue-700">SafeHelp {selectedCity.replace('-', ' ').toUpperCase()}</h1>
+        <p className="text-gray-600 mb-4">Find free local food, shelter, and support services</p>
 
-        {/* Category Filter Buttons */}
+        {/* City Selector (prep for future cities) */}
+        <div className="mb-4">
+          <select
+            value={selectedCity}
+            onChange={(e) => setSelectedCity(e.target.value)}
+            className="px-4 py-2 border rounded text-blue-700"
+          >
+            {Object.keys(data).map((city, i) => (
+              <option key={i} value={city}>
+                {city.replace('-', ' ').toUpperCase()}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        {/* Category Filters */}
         <div className="flex flex-wrap justify-center gap-2 mb-4">
           {categories.map((cat, i) => (
             <button
@@ -39,10 +52,8 @@ function App() {
         </div>
       </header>
 
-      {/* Map with Pins */}
+      {/* Map + Resource Cards */}
       <MapView resources={filteredResources} />
-
-      {/* Resource Cards */}
       <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
         {filteredResources.map((r, i) => (
           <div key={i} className="bg-white rounded-xl shadow p-4">

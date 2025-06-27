@@ -1,117 +1,95 @@
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
-import L from 'leaflet';
+import { Icon } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import iconUrl from 'leaflet/dist/images/marker-icon.png';
-import shadowUrl from 'leaflet/dist/images/marker-shadow.png';
+import L from 'leaflet';
 
-// Fix Leaflet marker icons
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
-  iconUrl,
-  shadowUrl,
+import foodIconUrl from './icons/food.svg';
+import shelterIconUrl from './icons/shelter.svg';
+import mentalIconUrl from './icons/mental.svg';
+import crisisIconUrl from './icons/crisis.svg';
+import supportIconUrl from './icons/support.svg';
+import healthIconUrl from './icons/health.svg';
+import defaultIconUrl from './icons/default.svg';
+import pinIconUrl from './icons/pin.svg';
+
+const categoryIcons = {
+  Food: foodIconUrl,
+  Shelter: shelterIconUrl,
+  'Mental Health': mentalIconUrl,
+  'Crisis Support': crisisIconUrl,
+  'Support Services': supportIconUrl,
+  'Health & Wellness': healthIconUrl,
+};
+
+const getCategoryIcon = (category) => {
+  return new Icon({
+    iconUrl: categoryIcons[category] || defaultIconUrl,
+    iconSize: [30, 30],
+    iconAnchor: [15, 30],
+    popupAnchor: [0, -30],
+  });
+};
+
+const userIcon = new Icon({
+  iconUrl: pinIconUrl,
+  iconSize: [30, 30],
+  iconAnchor: [15, 30],
 });
 
-function calculateDistance(lat1, lon1, lat2, lon2) {
-  const toRad = (value) => (value * Math.PI) / 180;
-  const R = 6371;
-  const dLat = toRad(lat2 - lat1);
-  const dLon = toRad(lon2 - lon1);
-  const a =
-    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-    Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
-    Math.sin(dLon / 2) * Math.sin(dLon / 2);
-  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  return R * c * 0.621371;
-}
-
-function MapCenter({ position }) {
+function RecenterMap({ center }) {
   const map = useMap();
-  map.setView(position);
+  if (center) {
+    map.setView(center, 14);
+  }
   return null;
 }
 
-// Define custom icons by category
-const icons = {
-  Food: new L.Icon({
-    iconUrl: 'https://cdn-icons-png.flaticon.com/512/1046/1046784.png',
-    iconSize: [30, 30],
-    iconAnchor: [15, 30],
-    popupAnchor: [0, -30]
-  }),
-  Shelter: new L.Icon({
-    iconUrl: 'https://cdn-icons-png.flaticon.com/512/69/69524.png',
-    iconSize: [30, 30],
-    iconAnchor: [15, 30],
-    popupAnchor: [0, -30]
-  }),
-  Mental: new L.Icon({
-    iconUrl: 'https://cdn-icons-png.flaticon.com/512/168/168882.png',
-    iconSize: [30, 30],
-    iconAnchor: [15, 30],
-    popupAnchor: [0, -30]
-  }),
-  Crisis: new L.Icon({
-    iconUrl: 'https://cdn-icons-png.flaticon.com/512/1048/1048953.png',
-    iconSize: [30, 30],
-    iconAnchor: [15, 30],
-    popupAnchor: [0, -30]
-  }),
-  default: new L.Icon.Default(),
-  user: new L.Icon({
-    iconUrl: 'https://cdn-icons-png.flaticon.com/512/684/684908.png',
-    iconSize: [30, 30],
-    iconAnchor: [15, 30],
-    popupAnchor: [0, -30]
-  })
-};
-
-export default function MapView({ resources, userLocation }) {
-  const defaultPosition = [42.7638, -71.4671];
-  const center = userLocation ? [userLocation.lat, userLocation.lng] : defaultPosition;
-
+export default function MapView({ resources, userLocation, mapCenter }) {
   return (
-    <div className="h-[500px] w-full my-6 rounded-xl overflow-hidden shadow">
-      <MapContainer center={center} zoom={13} style={{ height: '100%', width: '100%' }}>
-        <MapCenter position={center} />
+    <div className="h-[400px] w-full rounded-xl overflow-hidden shadow-md">
+      <MapContainer
+        center={mapCenter || [42.7653, -71.4676]}
+        zoom={13}
+        scrollWheelZoom={true}
+        className="h-full w-full"
+      >
+        <RecenterMap center={mapCenter} />
         <TileLayer
-          attribution='&copy; OpenStreetMap contributors'
+          attribution='© <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-
         {userLocation && (
-          <Marker position={center} icon={icons.user}>
+          <Marker position={[userLocation.lat, userLocation.lng]} icon={userIcon}>
             <Popup>You are here</Popup>
           </Marker>
         )}
-
-        {resources.map((r, i) => {
-          const distance = userLocation
-            ? calculateDistance(userLocation.lat, userLocation.lng, r.lat, r.lng).toFixed(1)
-            : null;
-          const icon = icons[r.category] || icons.default;
-
-          return (
-            <Marker key={i} position={[r.lat, r.lng]} icon={icon}>
-              <Popup>
-                <div>
-                  <strong>{r.name}</strong><br />
-                  {r.address}<br />
-                  <em>{r.category}</em><br />
-                  {distance && <div><strong>Distance:</strong> {distance} miles</div>}
-                  <a
-                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(r.address)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 underline"
-                  >
-                    Open in Google Maps
-                  </a>
-                </div>
-              </Popup>
-            </Marker>
-          );
-        })}
+        {resources.map((r, i) => (
+          <Marker
+            key={i}
+            position={[r.lat, r.lng]}
+            icon={getCategoryIcon(r.category)}
+          >
+            <Popup>
+              <strong>{r.name}</strong>
+              <br />
+              {r.address}
+              {r.distance && (
+                <>
+                  <br />
+                  Distance: {r.distance.toFixed(1)} miles
+                </>
+              )}
+              <br />
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(r.address)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open in Maps
+              </a>
+            </Popup>
+          </Marker>
+        ))}
       </MapContainer>
     </div>
   );

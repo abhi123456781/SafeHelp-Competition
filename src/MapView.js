@@ -1,35 +1,40 @@
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import { Icon } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-
-
-const categoryIcons = {
-  "Food": "https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png",
-  "Shelter": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f3e0.svg",
-  "Mental Health": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f9e0.svg",
-  "Health & Wellness": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/2695.svg",
-  "Support Services": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f91d.svg",
-  "Crisis Support": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4de.svg",
-  "Youth Programs": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f466.svg",
-  "Community Centers": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f465.svg",
-  "Education": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4da.svg",
-  "Transportation": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f68c.svg",
-  "Senior Services": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f474.svg",
-  "Veterans": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f396.svg",
-  "Legal Assistance": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/2696.svg",
-  "Immigration Support": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f30d.svg",
-  "Comprehensive Support": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f9f3.svg",
-  "default": "https://unpkg.com/leaflet@1.9.3/dist/images/marker-icon.png"
+const emojiIcons = {
+  "Food": "\ud83c\udf4e",
+  "Shelter": "\ud83c\udfe0",
+  "Mental Health": "\ud83e\udde0",
+  "Health & Wellness": "\ud83c\udfe5",
+  "Support Services": "\ud83e\udde9",
+  "Crisis Support": "\ud83d\udcde",
+  "Youth Programs": "\ud83d\udc67",
+  "Community Centers": "\ud83e\uddd1\u200d\ud83e\udd1d\u200d\ud83e\uddd1",
+  "Education": "\ud83d\udcda",
+  "Transportation": "\ud83d\ude8c",
+  "Senior Services": "\ud83d\udc74",
+  "Veterans": "\ud83c\udf96",
+  "Legal Assistance": "\u2696\ufe0f",
+  "Immigration Support": "\ud83c\udf0e",
+  "Comprehensive Support": "\ud83e\udded",
+  "default": "\ud83d\udccd"
 };
 
-const getCategoryIcon = (category) => {
-  return new Icon({
-    iconUrl: categoryIcons[category] || categoryIcons.default,
-    iconSize: [30, 30],
-    iconAnchor: [15, 30],
-    popupAnchor: [0, -30],
+const getEmojiIcon = (category) => {
+  const emoji = emojiIcons[category] || emojiIcons.default;
+  return L.divIcon({
+    html: `<div style="font-size: 24px;">${emoji}</div>`,
+    className: '',
+    iconSize: [24, 24],
+    iconAnchor: [12, 24]
   });
 };
+
+import L from 'leaflet';
+
+
+
+
 
 const userIcon = new Icon({
   iconUrl: "https://cdn-icons-png.flaticon.com/512/684/684908.png", // pin icon
@@ -60,7 +65,7 @@ export default function MapView({ resources, userLocation, mapCenter }) {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {userLocation && (
-          <Marker position={[userLocation.lat, userLocation.lng]} icon={userIcon}>
+          <Marker position={[userLocation.lat, userLocation.lng]} icon={getEmojiIcon(r.category)}>
             <Popup>You are here</Popup>
           </Marker>
         )}
@@ -68,7 +73,7 @@ export default function MapView({ resources, userLocation, mapCenter }) {
           <Marker
             key={i}
             position={[r.lat, r.lng]}
-            icon={getCategoryIcon(r.category)}
+            icon={getEmojiIcon(r.category)}
           >
             <Popup>
               <strong>{r.name}</strong>

@@ -5,7 +5,7 @@ import MapView from './MapView';
 
 function calculateDistance(lat1, lon1, lat2, lon2) {
   const toRad = (value) => (value * Math.PI) / 180;
-  const R = 6371; // Radius of Earth in km
+  const R = 6371;
   const dLat = toRad(lat2 - lat1);
   const dLon = toRad(lon2 - lon1);
   const a =
@@ -13,7 +13,7 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
     Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
     Math.sin(dLon / 2) * Math.sin(dLon / 2);
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  return R * c * 0.621371; // Convert to miles
+  return R * c * 0.621371;
 }
 
 function App() {
@@ -34,7 +34,7 @@ function App() {
       () => {
         console.warn('Geolocation failed or not allowed');
         setLocationError(true);
-        setMapCenter([42.7653, -71.4676]); // Default to Nashua
+        setMapCenter([42.7653, -71.4676]);
       }
     );
   }, []);
@@ -44,7 +44,6 @@ function App() {
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
-
     const matching =
       category === 'All'
         ? resources
@@ -75,10 +74,10 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-800 p-4">
+    <div className="min-h-screen bg-white text-[#002f6c] p-4">
       <header className="text-center mb-6">
-        <h1 className="text-3xl font-bold text-blue-700 mb-2">SafeHelp NE</h1>
-        <p className="text-gray-600 text-lg mb-4">Find free food, shelter, and support near you.</p>
+        <h1 className="text-3xl font-bold text-[#0047AB] mb-2">SafeHelp NE</h1>
+        <p className="text-lg mb-4">Find free food, shelter, and support near you.</p>
 
         {locationError && (
           <div className="bg-yellow-100 border border-yellow-400 text-yellow-800 px-4 py-2 rounded mb-4">
@@ -90,7 +89,7 @@ function App() {
           href="https://docs.google.com/forms/d/e/1FAIpQLSeh7viSbU-5DT_9XzBUHczUpByAhi8Ve1zE0I8FZSUtbTAZ-Q/viewform?usp=dialog"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block mb-4 px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg text-sm"
+          className="inline-block mb-4 px-4 py-2 text-white bg-[#0047AB] hover:bg-[#003b91] rounded-lg text-sm"
         >
           ➕ Submit a New Resource
         </a>
@@ -102,8 +101,8 @@ function App() {
               onClick={() => handleCategoryClick(cat)}
               className={`px-4 py-1 rounded-full text-sm border transition ${
                 selectedCategory === cat
-                  ? 'bg-blue-600 text-white border-blue-600'
-                  : 'bg-white text-blue-700 border-blue-500 hover:bg-blue-100'
+                  ? 'bg-[#0047AB] text-white border-[#0047AB]'
+                  : 'bg-white text-[#0047AB] border-[#0047AB] hover:bg-[#e6f0ff]'
               }`}
             >
               {cat}
@@ -116,9 +115,9 @@ function App() {
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
         {filteredResources.map((r, i) => (
-          <div key={i} className="bg-white rounded-xl shadow p-5">
-            <h2 className="text-lg font-semibold text-gray-900">{r.name}</h2>
-            <p className="text-sm text-gray-600">{r.address}</p>
+          <div key={i} className="bg-white border border-[#0047AB] rounded-xl shadow p-5">
+            <h2 className="text-lg font-semibold text-[#002f6c]">{r.name}</h2>
+            <p className="text-sm text-[#0047AB]">{r.address}</p>
             <p className="text-sm"><strong>Category:</strong> {r.category}</p>
             <p className="text-sm"><strong>Hours:</strong> {r.open_hours}</p>
             <p className="text-sm"><strong>Contact:</strong> {r.contact}</p>
@@ -131,7 +130,7 @@ function App() {
                 href={"https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(r.address)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 underline"
+                className="text-[#0047AB] underline"
               >
                 View on Google Maps
               </a>

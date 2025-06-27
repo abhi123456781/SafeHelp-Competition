@@ -89,7 +89,7 @@ function App() {
           href="https://docs.google.com/forms/d/e/1FAIpQLSeh7viSbU-5DT_9XzBUHczUpByAhi8Ve1zE0I8FZSUtbTAZ-Q/viewform?usp=dialog"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block mb-4 px-4 py-2 text-white bg-[#0047AB] hover:bg-[#003b91] rounded-lg text-sm"
+          className="inline-block mb-4 px-4 py-2 text-white bg-[#0047AB] hover:bg-[#e6f0ff] rounded-lg text-sm"
         >
           ➕ Submit a New Resource
         </a>

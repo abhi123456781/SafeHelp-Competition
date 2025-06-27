@@ -2,3 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 @import "leaflet/dist/leaflet.css";
+body {
+  @apply bg-background text-primaryDark font-sans;
+}
+
+button {
+  @apply border border-primary text-primary px-4 py-2 rounded-full font-semibold transition;
+}
+
+button:hover {
+  @apply bg-primary text-white;
+}

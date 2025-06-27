@@ -3,15 +3,6 @@ import { Icon } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 
-import foodIconUrl from './icons/food.svg';
-import shelterIconUrl from './icons/shelter.svg';
-import mentalIconUrl from './icons/mental.svg';
-import crisisIconUrl from './icons/crisis.svg';
-import supportIconUrl from './icons/support.svg';
-import healthIconUrl from './icons/health.svg';
-import defaultIconUrl from './icons/default.svg';
-import pinIconUrl from './icons/pin.svg';
-
 const categoryIcons = {
   "Food": "https://cdn-icons-png.flaticon.com/512/1046/1046784.png",
   "Shelter": "https://cdn-icons-png.flaticon.com/512/2271/2271343.png",

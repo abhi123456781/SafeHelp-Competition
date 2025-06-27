@@ -1,7 +1,7 @@
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import { Icon } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import L from 'leaflet';
+
 
 const categoryIcons = {
   Food: "https://cdn-icons-png.flaticon.com/512/1046/1046784.png",

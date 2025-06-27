@@ -1,39 +1,42 @@
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
-import { divIcon } from 'leaflet';
+import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
 const emojiIcons = {
-  "Food": "🍎",
-  "Shelter": "🏠",
-  "Mental Health": "🧠",
-  "Health & Wellness": "🏥",
-  "Support Services": "🧩",
-  "Crisis Support": "📞",
-  "Youth Programs": "👧",
-  "Community Centers": "🧑‍🤝‍🧑",
-  "Education": "📚",
-  "Transportation": "🚌",
-  "Senior Services": "👴",
-  "Veterans": "🎖",
-  "Legal Assistance": "⚖️",
-  "Immigration Support": "🌎",
-  "Comprehensive Support": "🧭",
-  "Clothing": "👕",
-  "Furniture & Household": "🛋️",
-  "Employment Assistance": "💼",
-  "Housing & Homelessness": "🏘️",
-  "default": "📍"
+  Food: '🍽️',
+  Shelter: '🏠',
+  'Mental Health': '🧠',
+  'Health & Wellness': '❤️',
+  'Support Services': '🤝',
+  'Crisis Support': '📞',
+  'Youth Programs': '🧒',
+  'Community Centers': '🏢',
+  Education: '📚',
+  Transportation: '🚌',
+  'Senior Services': '👴',
+  Veterans: '🎖️',
+  'Legal Assistance': '⚖️',
+  'Immigration Support': '🛂',
+  'Comprehensive Support': '🌐',
+  default: '📍'
 };
 
-const getEmojiIcon = (category) => {
+const getEmojiIcon = (category, id) => {
   const emoji = emojiIcons[category] || emojiIcons.default;
-  return divIcon({
-    html: `<div style="font-size: 24px;">${emoji}</div>`,
+  return L.divIcon({
+    html: `<div id="emoji-${id}" style='font-size: 24px; transition: transform 0.2s;'>${emoji}</div>`,
     className: '',
     iconSize: [24, 24],
-    iconAnchor: [12, 24],
+    iconAnchor: [12, 24]
   });
 };
+
+const userIcon = L.divIcon({
+  html: `<div style='font-size: 28px;'>📍</div>`,
+  className: '',
+  iconSize: [28, 28],
+  iconAnchor: [14, 28]
+});
 
 function RecenterMap({ center }) {
   const map = useMap();
@@ -59,7 +62,7 @@ export default function MapView({ resources, userLocation, mapCenter }) {
         />
 
         {userLocation && (
-          <Marker position={[userLocation.lat, userLocation.lng]} icon={getEmojiIcon("default")}>
+          <Marker position={[userLocation.lat, userLocation.lng]} icon={userIcon}>
             <Popup>You are here</Popup>
           </Marker>
         )}
@@ -68,10 +71,20 @@ export default function MapView({ resources, userLocation, mapCenter }) {
           <Marker
             key={i}
             position={[r.lat, r.lng]}
-            icon={getEmojiIcon(r.category)}
+            icon={getEmojiIcon(r.category, i)}
+            eventHandlers={{
+              mouseover: () => {
+                const el = document.getElementById(`emoji-${i}`);
+                if (el) el.style.transform = 'scale(1.5)';
+              },
+              mouseout: () => {
+                const el = document.getElementById(`emoji-${i}`);
+                if (el) el.style.transform = 'scale(1)';
+              }
+            }}
           >
             <Popup>
-              <strong>{emojiIcons[r.category] || emojiIcons.default} {r.name}</strong>
+              <strong>{r.name}</strong>
               <br />
               {r.address}
               {r.distance && (

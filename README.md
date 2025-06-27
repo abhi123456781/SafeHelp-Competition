@@ -21,6 +21,7 @@ Many people in crisis — especially youth — don’t know where to go for help
 
 ## Who It's For
 
+- People new to the area and dont know what/where reasources are avaliable
 - People in need of basic support (food, housing, crisis response)
 - Teens, students, and families in underserved areas
 - Teachers, counselors, nonprofits, and outreach workers

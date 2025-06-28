@@ -50,7 +50,7 @@ Many people in crisis — especially youth — don’t know where to go for help
 | **Netlify**        | Hosting + auto deployment                    |
 | **Git + GitHub**   | Version control and collaboration            |
 | **JSON**           | Easy-to-edit structured local data           |
-
+|**Google Analytics**| Trackable data                               |
 ---
 
 ## Live Website

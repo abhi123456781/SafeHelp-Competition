@@ -931,6 +931,147 @@
     "youth_friendly": true,
     "lat": 42.9880,
     "lng": -71.4568
-  }
+  },
+{
+  "name": "NTS Transit Center",
+  "address": "30 Elm St, Nashua, NH",
+  "category": "Transportation",
+  "open_hours": "Mon–Sat: see schedule",
+  "contact": "(603) 880‑0100",
+  "youth_friendly": true,
+  "lat": 42.765309,
+  "lng": -71.467616
+},
+{
+  "name": "Main St & Temple St",
+  "address": "Main St & Temple St, Nashua, NH",
+  "category": "Transportation",
+  "open_hours": "Mon–Sat: see schedule",
+  "contact": "(603) 880‑0100",
+  "youth_friendly": true,
+  "lat": 42.763123,
+  "lng": -71.465432
+},
+{
+  "name": "Amherst St & Dartmouth Rd",
+  "address": "Amherst St & Dartmouth Rd, Nashua, NH",
+  "category": "Transportation",
+  "open_hours": "Mon–Sat: see schedule",
+  "contact": "(603) 880‑0100",
+  "youth_friendly": true,
+  "lat": 42.744156,
+  "lng": -71.499389
+},
+{
+  "name": "Lake St & Northeastern Blvd",
+  "address": "Lake St & Northeastern Blvd, Nashua, NH",
+  "category": "Transportation",
+  "open_hours": "Mon–Sat: see schedule",
+  "contact": "(603) 880‑0100",
+  "youth_friendly": true,
+  "lat": 42.754892,
+  "lng": -71.502123
+},
+{
+  "name": "Canal St & Marketplace Plaza",
+  "address": "Canal St & Marketplace Plaza, Nashua, NH",
+  "category": "Transportation",
+  "open_hours": "Mon–Sat: see schedule",
+  "contact": "(603) 880‑0100",
+  "youth_friendly": true,
+  "lat": 42.771234,
+  "lng": -71.462345
+},
+,
+{
+  "name": "Main St & Chestnut St",
+  "address": "Main St & Chestnut St, Nashua, NH",
+  "category": "Transportation",
+  "open_hours": "Mon–Sat: see schedule",
+  "contact": "(603) 880-0100",
+  "youth_friendly": true,
+  "lat": 42.765890,
+  "lng": -71.467910
+},
+{
+  "name": "Broad St & Canal St",
+  "address": "Broad St & Canal St, Nashua, NH",
+  "category": "Transportation",
+  "open_hours": "Mon–Sat: see schedule",
+  "contact": "(603) 880-0100",
+  "youth_friendly": true,
+  "lat": 42.771200,
+  "lng": -71.466700
+},
+{
+  "name": "Concord St & McGregor St",
+  "address": "Concord St & McGregor St, Nashua, NH",
+  "category": "Transportation",
+  "open_hours": "Mon–Sat: see schedule",
+  "contact": "(603) 880-0100",
+  "youth_friendly": true,
+  "lat": 42.781050,
+  "lng": -71.477250
+},
+{
+  "name": "East Hollis St & Walnut St",
+  "address": "E Hollis St & Walnut St, Nashua, NH",
+  "category": "Transportation",
+  "open_hours": "Mon–Sat: see schedule",
+  "contact": "(603) 880-0100",
+  "youth_friendly": true,
+  "lat": 42.768450,
+  "lng": -71.461900
+},
+{
+  "name": "West Pearl St & Amherst St",
+  "address": "W Pearl St & Amherst St, Nashua, NH",
+  "category": "Transportation",
+  "open_hours": "Mon–Sat: see schedule",
+  "contact": "(603) 880-0100",
+  "youth_friendly": true,
+  "lat": 42.764500,
+  "lng": -71.507800
+},
+{
+  "name": "East Dunstable Rd & West Hollis St",
+  "address": "E Dunstable Rd & W Hollis St, Nashua, NH",
+  "category": "Transportation",
+  "open_hours": "Mon–Sat: see schedule",
+  "contact": "(603) 880-0100",
+  "youth_friendly": true,
+  "lat": 42.744200,
+  "lng": -71.469000
+},
+{
+  "name": "Amherst St & Riverside Dr",
+  "address": "Amherst St & Riverside Dr, Nashua, NH",
+  "category": "Transportation",
+  "open_hours": "Mon–Sat: see schedule",
+  "contact": "(603) 880-0100",
+  "youth_friendly": true,
+  "lat": 42.749600,
+  "lng": -71.512500
+},
+{
+  "name": "Main St & Concord St Bus Station",
+  "address": "Main St & Concord St, Nashua, NH",
+  "category": "Transportation",
+  "open_hours": "Mon–Sat: see schedule",
+  "contact": "(603) 880-0100",
+  "youth_friendly": true,
+  "lat": 42.782000,
+  "lng": -71.462300
+},
+{
+  "name": "East Dunstable Rd & Broad St",
+  "address": "E Dunstable Rd & Broad St, Nashua, NH",
+  "category": "Transportation",
+  "open_hours": "Mon–Sat: see schedule",
+  "contact": "(603) 880-0100",
+  "youth_friendly": true,
+  "lat": 42.750000,
+  "lng": -71.488500
+}
   ]
 }

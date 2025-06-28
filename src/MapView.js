@@ -9,7 +9,7 @@ const emojiIcons = {
   "Health & Wellness": "❤️",
   "Support Services": "🤝",
   "Crisis Support": "📞",
-  "Youth Programs": "🧒",
+  "Youth Programs": "👧👦",
   "Community Centers": "🧑‍🤝‍🧑",
   "Education": "📚",
   "Transportation": "🚌",

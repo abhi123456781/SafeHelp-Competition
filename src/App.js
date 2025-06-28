@@ -93,7 +93,7 @@ function App() {
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 bg-[#0047AB] text-white font-medium text-sm rounded-lg shadow hover:bg-[#003b91]"
           >
-            ➕ Submit a New Resource
+            Submit a New Resource
           </a>
         </div>
       </div>

@@ -3,13 +3,13 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
 const emojiIcons = {
-  "Food": "🍎",
+  "Food": "🍽️",
   "Shelter": "🏠",
   "Mental Health": "🧠",
-  "Health & Wellness": "🏥",
-  "Support Services": "🧩",
+  "Health & Wellness": "❤️",
+  "Support Services": "🤝",
   "Crisis Support": "📞",
-  "Youth Programs": "👧",
+  "Youth Programs": "🧒",
   "Community Centers": "🧑‍🤝‍🧑",
   "Education": "📚",
   "Transportation": "🚌",

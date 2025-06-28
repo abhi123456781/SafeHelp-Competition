@@ -78,7 +78,7 @@ function App() {
       {/* Hero Section */}
       <div className="text-center py-6 px-4">
         <h2 className="text-sm font-semibold text-[#0047AB] uppercase tracking-wide">
-          Trusted Community Resource
+          Community Resource
         </h2>
         <h1 className="text-4xl md:text-5xl font-bold text-[#002f6c] mt-2">
           SafeHelp NE

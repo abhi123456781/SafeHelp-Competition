@@ -75,41 +75,51 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white text-[#002f6c] p-4">
-      <header className="text-center mb-6">
-        <h1 className="text-3xl font-bold text-[#0047AB] mb-2">SafeHelp NE</h1>
-        <p className="text-lg mb-4">Find free food, shelter, and support near you.</p>
-
-        {locationError && (
-          <div className="bg-yellow-100 border border-yellow-400 text-yellow-800 px-4 py-2 rounded mb-4">
-            ⚠️ We couldn't access your location. Map will default to Nashua.
-          </div>
-        )}
-
-        <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSeh7viSbU-5DT_9XzBUHczUpByAhi8Ve1zE0I8FZSUtbTAZ-Q/viewform?usp=dialog"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block mb-4 px-4 py-2 text-white bg-[#0047AB] hover:bg-hoverLight rounded-lg text-sm"
-        >
-          ➕ Submit a New Resource
-        </a>
-
-        <div className="flex flex-wrap justify-center gap-2 mb-4">
-          {categories.map((cat, i) => (
-            <button
-              key={i}
-              onClick={() => handleCategoryClick(cat)}
-              className={`px-4 py-1 rounded-full text-sm border transition ${
-                selectedCategory === cat
-                  ? 'bg-[#0047AB] text-white border-[#0047AB]'
-                  : 'bg-white text-[#0047AB] border-[#0047AB] hover:bg-hoverLight'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
+      {/* Hero Section */}
+      <div className="text-center py-24 px-4">
+        <h2 className="text-sm font-semibold text-[#0047AB] uppercase tracking-wide">
+          Trusted Community Resource
+        </h2>
+        <h1 className="text-4xl md:text-5xl font-bold text-[#002f6c] mt-2">
+          SafeHelp NE
+        </h1>
+        <p className="mt-4 text-lg text-gray-700 max-w-xl mx-auto">
+          Find free food, shelter, and support near you.
+        </p>
+        <div className="mt-6 flex justify-center gap-4">
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeh7viSbU-5DT_9XzBUHczUpByAhi8Ve1zE0I8FZSUtbTAZ-Q/viewform?usp=dialog"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-6 py-3 bg-[#0047AB] text-white font-medium text-sm rounded-lg shadow hover:bg-[#003b91]"
+          >
+            ➕ Submit a New Resource
+          </a>
         </div>
-      </header>
+      </div>
+
+      {locationError && (
+        <div className="bg-yellow-100 border border-yellow-400 text-yellow-800 px-4 py-2 rounded mb-4 text-center">
+          ⚠️ We couldn't access your location. Map will default to Nashua.
+        </div>
+      )}
+
+      {/* Category Filters */}
+      <div className="flex flex-wrap justify-center gap-2 mb-6">
+        {categories.map((cat, i) => (
+          <button
+            key={i}
+            onClick={() => handleCategoryClick(cat)}
+            className={`px-4 py-1 rounded-full text-sm border transition ${
+              selectedCategory === cat
+                ? 'bg-[#0047AB] text-white border-[#0047AB]'
+                : 'bg-white text-[#0047AB] border-[#0047AB] hover:bg-hoverLight'
+            }`}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
 
       <MapView resources={filteredResources} userLocation={userLocation} mapCenter={mapCenter} />
 

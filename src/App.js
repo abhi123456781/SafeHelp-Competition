@@ -76,7 +76,7 @@ function App() {
   return (
     <div className="min-h-screen bg-white text-[#002f6c] p-4">
       {/* Hero Section */}
-      <div className="text-center py-24 px-4">
+      <div className="text-center py-6 px-4">
         <h2 className="text-sm font-semibold text-[#0047AB] uppercase tracking-wide">
           Trusted Community Resource
         </h2>

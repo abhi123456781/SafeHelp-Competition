@@ -80,9 +80,10 @@ function App() {
         <h2 className="text-sm font-semibold text-[#0047AB] uppercase tracking-wide">
           Community Resource
         </h2>
-        <h1 className="text-4xl md:text-5xl font-bold text-[#002f6c] mt-2">
-          SafeHelp NE
-        </h1>
+        <div className="flex justify-center items-center gap-3 mt-2">
+  <img src="/logo192.png" alt="SafeHelp Logo" className="h-10 w-10 md:h-12 md:w-12" />
+  <h1 className="text-4xl md:text-5xl font-bold text-[#002f6c]">SafeHelp NE</h1>
+</div>
         <p className="mt-4 text-lg text-gray-700 max-w-xl mx-auto">
           Find free food, shelter, and support near you.
         </p>

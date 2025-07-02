@@ -81,7 +81,7 @@ function App() {
           Community Resource
         </h2>
         <div className="flex justify-center items-center gap-3 mt-2">
-  <img src="/logo192.png" alt="SafeHelp Logo" className="h-10 w-10 md:h-12 md:w-12" />
+  <img src="/logo192.png" alt="SafeHelp Logo" className="h-20 w-20 md:h-12 md:w-12" />
   <h1 className="text-4xl md:text-5xl font-bold text-[#002f6c]">SafeHelp NE</h1>
 </div>
         <p className="mt-4 text-lg text-gray-700 max-w-xl mx-auto">

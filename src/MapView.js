@@ -9,7 +9,7 @@ const emojiIcons = {
   "Health & Wellness": "❤️",
   "Support Services": "🤝",
   "Crisis Support": "📞",
-  "Youth Programs": "👧👦",
+  "Youth Programs": "👦",
   "Community Centers": "🧑‍🤝‍🧑",
   "Education": "📚",
   "Transportation": "🚌",
@@ -29,7 +29,7 @@ const getEmojiIcon = (category, id) => {
   const emoji = emojiIcons[category] || emojiIcons.default;
   return L.divIcon({
     html: `<div id="emoji-${id}" style='
-      font-size: 40px;
+      font-size: 24px;
       transition: transform 0.2s;
       text-shadow: -1px -1px 0 #000, 1px -1px 0 #000,
                    -1px 1px 0 #000, 1px 1px 0 #000;

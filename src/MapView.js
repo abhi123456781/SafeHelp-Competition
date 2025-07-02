@@ -28,7 +28,7 @@ const emojiIcons = {
 const getEmojiIcon = (category, id) => {
   const emoji = emojiIcons[category] || emojiIcons.default;
   return L.divIcon({
-    html: `<div id="emoji-${id}" style='font-size: 24px; transition: transform 0.2s;'>${emoji}</div>`,
+    html: `<div id="emoji-${id}" style='font-size: 40px; transition: transform 0.2s;'>${emoji}</div>`,
     className: '',
     iconSize: [24, 24],
     iconAnchor: [12, 24]

@@ -85,9 +85,12 @@ function App() {
     setSelectedDropdown(dropdownName);
   };
 
-  const handleDropdownMouseLeave = () => {
-    // Close dropdown when mouse leaves the dropdown area
-    setSelectedDropdown(null);
+  const handleDropdownMouseLeave = (event) => {
+    // Only close if mouse is leaving the entire dropdown container (button + options)
+    const relatedTarget = event.relatedTarget;
+    if (!relatedTarget || !relatedTarget.closest('.dropdown-container')) {
+      setSelectedDropdown(null);
+    }
   };
 
   const handleSubcategoryClick = (subcategory) => {
@@ -202,9 +205,9 @@ function App() {
               <div
                 className="absolute top-full left-0 mt-2 z-[9999] w-max max-w-xs animate-in slide-in-from-top-2 duration-300"
                 onMouseEnter={() => handleDropdownMouseEnter(dropdownName)}
-                onMouseLeave={() => { }} // Don't close when hovering over dropdown options
+                onMouseLeave={handleDropdownMouseLeave}
               >
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-1">
                   {dropdownData.subcategories.map((subcategory, index) => (
                     <button
                       key={subcategory}

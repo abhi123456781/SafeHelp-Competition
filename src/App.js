@@ -86,9 +86,10 @@ function App() {
   };
 
   const handleDropdownMouseLeave = (event) => {
-    // Only close if mouse is leaving the entire dropdown container (button + options)
+    // Check if mouse is moving to a child element within the dropdown container
     const relatedTarget = event.relatedTarget;
     if (!relatedTarget || !relatedTarget.closest('.dropdown-container')) {
+      // Only close if mouse is truly leaving the dropdown area
       setSelectedDropdown(null);
     }
   };
@@ -203,7 +204,7 @@ function App() {
 
             {selectedDropdown === dropdownName && (
               <div
-                className="absolute top-full left-0 mt-2 z-[9999] w-max max-w-xs animate-in slide-in-from-top-2 duration-300"
+                className="absolute top-full left-0 z-[9999] w-max max-w-xs animate-in slide-in-from-top-2 duration-300"
                 onMouseEnter={() => handleDropdownMouseEnter(dropdownName)}
                 onMouseLeave={handleDropdownMouseLeave}
               >

@@ -7,6 +7,8 @@ const emojiIcons = {
   "Shelter": "🏠",
   "Mental Health": "🧠",
   "Health & Wellness": "❤️",
+  "Medical Care": "❤️",
+  "Medicine Lookup": "💊",
   "Support Services": "🤝",
   "Crisis Support": "📞",
   "Youth Programs": "👦",
@@ -57,7 +59,7 @@ function RecenterMap({ center }) {
 
 export default function MapView({ resources, userLocation, mapCenter }) {
   return (
-    <div className="h-[400px] w-full rounded-xl overflow-hidden shadow-md">
+    <div className="h-[600px] w-full rounded-xl overflow-hidden shadow-md">
       <MapContainer
         center={mapCenter || [42.7653, -71.4676]}
         zoom={13}

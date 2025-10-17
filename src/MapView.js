@@ -59,7 +59,7 @@ function RecenterMap({ center }) {
 
 export default function MapView({ resources, userLocation, mapCenter }) {
   return (
-    <div className="h-[600px] w-full rounded-xl overflow-hidden shadow-md">
+    <div className="h-[600px] w-full rounded-xl overflow-hidden shadow-md relative z-0">
       <MapContainer
         center={mapCenter || [42.7653, -71.4676]}
         zoom={13}

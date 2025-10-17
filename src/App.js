@@ -185,17 +185,17 @@ function App() {
             </button>
 
             {selectedDropdown === dropdownName && (
-              <div className="absolute top-full left-0 mt-2 bg-white border border-[#0047AB] rounded-lg shadow-xl z-50 min-w-max">
-                <div className="flex flex-wrap gap-2 p-2">
+              <div className="absolute top-full left-0 mt-2 bg-white border-2 border-[#0047AB] rounded-lg shadow-2xl z-[9999] min-w-max">
+                <div className="flex flex-col gap-1 p-2">
                   {dropdownData.subcategories.map((subcategory) => (
                     <button
                       key={subcategory}
                       onClick={() => handleSubcategoryClick(subcategory)}
-                      className={`px-3 py-1 rounded-full text-xs border transition whitespace-nowrap ${selectedCategory === subcategory
-                        ? 'bg-[#0047AB] text-white border-[#0047AB]'
+                      className={`px-4 py-2 rounded-full text-sm border-2 transition-all duration-200 whitespace-nowrap text-left ${selectedCategory === subcategory
+                        ? 'bg-[#0047AB] text-white border-[#0047AB] shadow-md'
                         : subcategory === 'Medicine Lookup'
-                          ? 'font-bold text-red-600 border-red-300 hover:bg-red-50'
-                          : 'text-[#002f6c] border-[#0047AB] hover:bg-blue-50'
+                          ? 'font-bold text-red-600 border-red-400 bg-red-50 hover:bg-red-100 hover:border-red-500'
+                          : 'text-[#002f6c] border-[#0047AB] bg-blue-50 hover:bg-blue-100 hover:border-blue-600 hover:shadow-md'
                         }`}
                     >
                       {subcategory === 'Food' && '🍽️ '}
@@ -226,7 +226,7 @@ function App() {
       </div>
 
       {/* Main Content Area - Split Layout */}
-      <div className="flex gap-6 max-w-7xl mx-auto">
+      <div className="flex gap-6 max-w-7xl mx-auto relative z-10">
         {/* Left Side - Results List */}
         <div className="w-1/2 max-h-[600px] overflow-y-auto">
           <div className="space-y-4">

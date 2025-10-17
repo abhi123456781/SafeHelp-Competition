@@ -192,10 +192,10 @@ function App() {
                       key={subcategory}
                       onClick={() => handleSubcategoryClick(subcategory)}
                       className={`px-4 py-2 rounded-full text-sm border-2 transition-all duration-200 whitespace-nowrap text-left animate-in slide-in-from-left-2 duration-300 ${selectedCategory === subcategory
-                          ? 'bg-[#0047AB] text-white border-[#0047AB] shadow-md'
-                          : subcategory === 'Medicine Lookup'
-                            ? 'font-bold text-red-600 border-red-400 bg-red-50 hover:bg-red-100 hover:border-red-500 hover:shadow-md'
-                            : 'text-[#002f6c] border-[#0047AB] bg-white hover:bg-[#0047AB] hover:text-white hover:border-[#0047AB] hover:shadow-md'
+                        ? 'bg-[#0047AB] text-white border-[#0047AB] shadow-md'
+                        : subcategory === 'Medicine Lookup'
+                          ? 'font-bold text-red-600 border-red-400 bg-red-50 hover:bg-red-100 hover:border-red-500 hover:shadow-md'
+                          : 'text-[#002f6c] border-[#0047AB] bg-white hover:bg-[#0047AB] hover:text-white hover:border-[#0047AB] hover:shadow-md'
                         }`}
                       style={{
                         animationDelay: `${index * 50}ms`

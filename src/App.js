@@ -140,14 +140,14 @@ function App() {
       {/* Hero Section */}
       <div className="text-center py-6 px-4">
         <h2 className="text-sm font-semibold text-[#0047AB] uppercase tracking-wide">
-          Community Resource
+          Created by Abhinav Mareedu & Nithin Venkatramanan
         </h2>
         <div className="flex justify-center items-center gap-3 mt-2">
           <img src="/logo192.png" alt="SafeHelp Logo" className="h-20 w-20 md:h-20 md:w-20" />
           <h1 className="text-4xl md:text-5xl font-bold text-[#002f6c]">SafeHelp NE</h1>
         </div>
         <p className="mt-4 text-lg text-gray-700 max-w-xl mx-auto">
-          Find free food, shelter, and support near you.
+          Find support near you.
         </p>
         <div className="mt-6 flex justify-center gap-4">
           <a

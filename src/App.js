@@ -208,7 +208,7 @@ function App() {
                 onMouseEnter={() => handleDropdownMouseEnter(dropdownName)}
                 onMouseLeave={handleDropdownMouseLeave}
               >
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-1 pt-2">
                   {dropdownData.subcategories.map((subcategory, index) => (
                     <button
                       key={subcategory}

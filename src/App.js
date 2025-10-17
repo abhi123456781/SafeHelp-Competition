@@ -81,6 +81,14 @@ function App() {
     // Don't reset selectedCategory - keep the current selection
   };
 
+  const handleDropdownMouseEnter = (dropdownName) => {
+    setSelectedDropdown(dropdownName);
+  };
+
+  const handleDropdownMouseLeave = () => {
+    // Don't close on mouse leave - let user click to close
+  };
+
   const handleSubcategoryClick = (subcategory) => {
     setSelectedCategory(subcategory);
     setSelectedDropdown(null);
@@ -170,6 +178,8 @@ function App() {
           <div key={dropdownName} className="relative dropdown-container">
             <button
               onClick={() => handleDropdownClick(dropdownName)}
+              onMouseEnter={() => handleDropdownMouseEnter(dropdownName)}
+              onMouseLeave={handleDropdownMouseLeave}
               className={`px-4 py-2 rounded-full text-sm border-2 transition flex items-center gap-1 ${selectedDropdown === dropdownName || isDropdownHighlighted(dropdownName)
                 ? 'bg-[#0047AB] text-white border-[#0047AB]'
                 : 'bg-white text-[#0047AB] border-[#0047AB] hover:bg-[#0047AB] hover:text-white hover:border-[#0047AB]'
@@ -188,7 +198,11 @@ function App() {
             </button>
 
             {selectedDropdown === dropdownName && (
-              <div className="absolute top-full left-0 mt-2 z-[9999] min-w-max animate-in slide-in-from-top-2 duration-300">
+              <div
+                className="absolute top-full left-0 mt-2 z-[9999] min-w-max animate-in slide-in-from-top-2 duration-300"
+                onMouseEnter={() => handleDropdownMouseEnter(dropdownName)}
+                onMouseLeave={handleDropdownMouseLeave}
+              >
                 <div className="flex flex-col gap-2">
                   {dropdownData.subcategories.map((subcategory, index) => (
                     <button

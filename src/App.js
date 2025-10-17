@@ -73,16 +73,12 @@ function App() {
     'Legal': {
       emoji: '⚖️',
       subcategories: ['Legal Assistance', 'Immigration Support']
-    },
-    'Comprehensive Support': {
-      emoji: '🧭',
-      subcategories: ['Comprehensive Support']
     }
   };
 
   const handleDropdownClick = (dropdownName) => {
     setSelectedDropdown(selectedDropdown === dropdownName ? null : dropdownName);
-    setSelectedCategory('All');
+    // Don't reset selectedCategory - keep the current selection
   };
 
   const handleSubcategoryClick = (subcategory) => {
@@ -103,6 +99,13 @@ function App() {
   const handleAllClick = () => {
     setSelectedCategory('All');
     setSelectedDropdown(null);
+  };
+
+  // Check if a dropdown should be highlighted based on selected category
+  const isDropdownHighlighted = (dropdownName) => {
+    if (selectedCategory === 'All' || selectedCategory === 'Comprehensive Support') return false;
+    const dropdownData = dropdownCategories[dropdownName];
+    return dropdownData && dropdownData.subcategories.includes(selectedCategory);
   };
 
   let filteredResources =
@@ -163,11 +166,21 @@ function App() {
           🏠 All Resources
         </button>
 
+        <button
+          onClick={() => handleSubcategoryClick('Comprehensive Support')}
+          className={`px-4 py-2 rounded-full text-sm border-2 transition ${selectedCategory === 'Comprehensive Support'
+            ? 'bg-[#0047AB] text-white border-[#0047AB]'
+            : 'bg-white text-[#0047AB] border-[#0047AB] hover:bg-[#0047AB] hover:text-white hover:border-[#0047AB]'
+            }`}
+        >
+          🧭 Comprehensive Support
+        </button>
+
         {Object.entries(dropdownCategories).map(([dropdownName, dropdownData]) => (
           <div key={dropdownName} className="relative dropdown-container">
             <button
               onClick={() => handleDropdownClick(dropdownName)}
-              className={`px-4 py-2 rounded-full text-sm border-2 transition flex items-center gap-1 ${selectedDropdown === dropdownName
+              className={`px-4 py-2 rounded-full text-sm border-2 transition flex items-center gap-1 ${selectedDropdown === dropdownName || isDropdownHighlighted(dropdownName)
                 ? 'bg-[#0047AB] text-white border-[#0047AB]'
                 : 'bg-white text-[#0047AB] border-[#0047AB] hover:bg-[#0047AB] hover:text-white hover:border-[#0047AB]'
                 }`}
@@ -191,11 +204,11 @@ function App() {
                     <button
                       key={subcategory}
                       onClick={() => handleSubcategoryClick(subcategory)}
-                      className={`px-4 py-2 rounded-full text-sm border-2 transition-all duration-200 whitespace-nowrap text-left animate-in slide-in-from-left-2 duration-300 ${selectedCategory === subcategory
-                        ? 'bg-[#0047AB] text-white border-[#0047AB] shadow-md'
+                      className={`px-4 py-2 rounded-full text-sm border-2 transition-all duration-200 whitespace-nowrap text-left animate-in slide-in-from-left-2 duration-300 shadow-lg ${selectedCategory === subcategory
+                        ? 'bg-[#0047AB] text-white border-[#0047AB] shadow-xl'
                         : subcategory === 'Medicine Lookup'
-                          ? 'font-bold text-red-600 border-red-400 bg-red-50 hover:bg-red-100 hover:border-red-500 hover:shadow-md'
-                          : 'text-[#002f6c] border-[#0047AB] bg-white hover:bg-[#0047AB] hover:text-white hover:border-[#0047AB] hover:shadow-md'
+                          ? 'font-bold text-red-600 border-red-400 bg-red-50 hover:bg-red-100 hover:border-red-500 hover:shadow-xl'
+                          : 'text-[#002f6c] border-[#0047AB] bg-white hover:bg-[#0047AB] hover:text-white hover:border-[#0047AB] hover:shadow-xl'
                         }`}
                       style={{
                         animationDelay: `${index * 50}ms`
@@ -232,6 +245,20 @@ function App() {
       <div className="flex gap-6 max-w-7xl mx-auto relative z-10">
         {/* Left Side - Results List */}
         <div className="w-1/2 max-h-[600px] overflow-y-auto">
+          {/* Section Title */}
+          <div className="mb-4">
+            <h3 className="text-xl font-bold text-[#002f6c] mb-2">
+              {selectedCategory === 'All'
+                ? '🏠 All Resources'
+                : selectedCategory === 'Comprehensive Support'
+                  ? '🧭 Comprehensive Support'
+                  : `📋 ${selectedCategory} Resources`
+              }
+            </h3>
+            <p className="text-sm text-gray-600">
+              {filteredResources.length} {filteredResources.length === 1 ? 'resource' : 'resources'} found
+            </p>
+          </div>
           <div className="space-y-4">
             {filteredResources.map((r, i) => (
               <div key={i} className="bg-white border border-[#0047AB] rounded-xl shadow p-5">

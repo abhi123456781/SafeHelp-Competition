@@ -40,6 +40,20 @@ function App() {
     );
   }, []);
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (selectedDropdown && !event.target.closest('.dropdown-container')) {
+        setSelectedDropdown(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [selectedDropdown]);
+
   const resources = data.resources;
 
   // Define dropdown categories with their subcategories
@@ -138,7 +152,7 @@ function App() {
       )}
 
       {/* Category Filters */}
-      <div className="flex flex-wrap justify-center gap-2 mb-6">
+      <div className="flex flex-wrap justify-center gap-2 mb-6 relative z-50">
         <button
           onClick={handleAllClick}
           className={`px-4 py-2 rounded-full text-sm border transition ${selectedCategory === 'All'
@@ -150,48 +164,61 @@ function App() {
         </button>
 
         {Object.entries(dropdownCategories).map(([dropdownName, dropdownData]) => (
-          <div key={dropdownName} className="relative">
+          <div key={dropdownName} className="relative dropdown-container">
             <button
               onClick={() => handleDropdownClick(dropdownName)}
-              className={`px-4 py-2 rounded-full text-sm border transition ${selectedDropdown === dropdownName
+              className={`px-4 py-2 rounded-full text-sm border transition flex items-center gap-1 ${selectedDropdown === dropdownName
                 ? 'bg-[#0047AB] text-white border-[#0047AB]'
                 : 'bg-white text-[#0047AB] border-[#0047AB] hover:bg-blue-50'
                 }`}
             >
               {dropdownData.emoji} {dropdownName}
+              <svg
+                className={`w-4 h-4 transition-transform ${selectedDropdown === dropdownName ? 'rotate-180' : ''
+                  }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
             </button>
 
             {selectedDropdown === dropdownName && (
-              <div className="absolute top-full left-0 mt-1 bg-white border border-[#0047AB] rounded-lg shadow-lg z-10 min-w-max">
-                {dropdownData.subcategories.map((subcategory) => (
-                  <button
-                    key={subcategory}
-                    onClick={() => handleSubcategoryClick(subcategory)}
-                    className={`block w-full text-left px-4 py-2 text-sm hover:bg-blue-50 first:rounded-t-lg last:rounded-b-lg ${subcategory === 'Medicine Lookup'
-                      ? 'font-bold text-red-600'
-                      : 'text-[#002f6c]'
-                      }`}
-                  >
-                    {subcategory === 'Food' && '🍽️ '}
-                    {subcategory === 'Clothing' && '👕 '}
-                    {subcategory === 'Transportation' && '🚌 '}
-                    {subcategory === 'Furniture & Household' && '🛋️ '}
-                    {subcategory === 'Housing & Homelessness' && '🏘️ '}
-                    {subcategory === 'Community Centers' && '🧑‍🤝‍🧑 '}
-                    {subcategory === 'Medicine Lookup' && '💊 '}
-                    {subcategory === 'Medical Care' && '❤️ '}
-                    {subcategory === 'Mental Health' && '🧠 '}
-                    {subcategory === 'Senior Services' && '👴 '}
-                    {subcategory === 'Employment Assistance' && '💼 '}
-                    {subcategory === 'Education' && '📚 '}
-                    {subcategory === 'Youth Programs' && '👦 '}
-                    {subcategory === 'Veterans' && '🎖️ '}
-                    {subcategory === 'Legal Assistance' && '⚖️ '}
-                    {subcategory === 'Immigration Support' && '🌎 '}
-                    {subcategory === 'Comprehensive Support' && '🧭 '}
-                    {subcategory}
-                  </button>
-                ))}
+              <div className="absolute top-full left-0 mt-2 bg-white border border-[#0047AB] rounded-lg shadow-xl z-50 min-w-max">
+                <div className="flex flex-wrap gap-2 p-2">
+                  {dropdownData.subcategories.map((subcategory) => (
+                    <button
+                      key={subcategory}
+                      onClick={() => handleSubcategoryClick(subcategory)}
+                      className={`px-3 py-1 rounded-full text-xs border transition whitespace-nowrap ${selectedCategory === subcategory
+                        ? 'bg-[#0047AB] text-white border-[#0047AB]'
+                        : subcategory === 'Medicine Lookup'
+                          ? 'font-bold text-red-600 border-red-300 hover:bg-red-50'
+                          : 'text-[#002f6c] border-[#0047AB] hover:bg-blue-50'
+                        }`}
+                    >
+                      {subcategory === 'Food' && '🍽️ '}
+                      {subcategory === 'Clothing' && '👕 '}
+                      {subcategory === 'Transportation' && '🚌 '}
+                      {subcategory === 'Furniture & Household' && '🛋️ '}
+                      {subcategory === 'Housing & Homelessness' && '🏘️ '}
+                      {subcategory === 'Community Centers' && '🧑‍🤝‍🧑 '}
+                      {subcategory === 'Medicine Lookup' && '💊 '}
+                      {subcategory === 'Medical Care' && '❤️ '}
+                      {subcategory === 'Mental Health' && '🧠 '}
+                      {subcategory === 'Senior Services' && '👴 '}
+                      {subcategory === 'Employment Assistance' && '💼 '}
+                      {subcategory === 'Education' && '📚 '}
+                      {subcategory === 'Youth Programs' && '👦 '}
+                      {subcategory === 'Veterans' && '🎖️ '}
+                      {subcategory === 'Legal Assistance' && '⚖️ '}
+                      {subcategory === 'Immigration Support' && '🌎 '}
+                      {subcategory === 'Comprehensive Support' && '🧭 '}
+                      {subcategory}
+                    </button>
+                  ))}
+                </div>
               </div>
             )}
           </div>

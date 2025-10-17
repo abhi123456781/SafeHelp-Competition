@@ -23,6 +23,13 @@ function App() {
   const [locationError, setLocationError] = useState(false);
   const [mapCenter, setMapCenter] = useState(null);
 
+  // Medicine Lookup states
+  const [medicineName, setMedicineName] = useState('');
+  const [showMedicineResults, setShowMedicineResults] = useState(false);
+  const [availabilityStatus, setAvailabilityStatus] = useState({});
+  const [showNotification, setShowNotification] = useState(false);
+  const [notificationMessage, setNotificationMessage] = useState('');
+
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -97,6 +104,14 @@ function App() {
   const handleSubcategoryClick = (subcategory) => {
     setSelectedCategory(subcategory);
     setSelectedDropdown(null);
+
+    if (subcategory === 'Medicine Lookup') {
+      setShowMedicineResults(true);
+      setMedicineName('');
+      return;
+    }
+
+    setShowMedicineResults(false);
     const matching = resources.filter(r => r.category === subcategory);
 
     if (userLocation && matching.length > 0) {
@@ -112,6 +127,37 @@ function App() {
   const handleAllClick = () => {
     setSelectedCategory('All');
     setSelectedDropdown(null);
+    setShowMedicineResults(false);
+  };
+
+  const handleMedicineSubmit = (e) => {
+    e.preventDefault();
+    if (medicineName.toLowerCase().includes('benadryl')) {
+      setShowMedicineResults(true);
+    }
+  };
+
+  const handleCheckAvailability = (storeName) => {
+    setAvailabilityStatus(prev => ({
+      ...prev,
+      [storeName]: 'checking'
+    }));
+
+    // Simulate AI checking after 1 minute
+    setTimeout(() => {
+      setAvailabilityStatus(prev => ({
+        ...prev,
+        [storeName]: 'available'
+      }));
+      setNotificationMessage(`Availability Check with ${storeName} complete! Status: Available`);
+      setShowNotification(true);
+    }, 60000); // 1 minute for demo
+  };
+
+  const handleNotificationClick = () => {
+    setShowNotification(false);
+    setSelectedCategory('Medicine Lookup');
+    setShowMedicineResults(true);
   };
 
   // Check if a dropdown should be highlighted based on selected category
@@ -137,6 +183,18 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white text-[#002f6c] p-4">
+      {/* Notification */}
+      {showNotification && (
+        <div
+          className="fixed top-4 left-4 bg-white border-2 border-green-500 rounded-lg shadow-lg p-4 z-[10000] cursor-pointer hover:shadow-xl transition-shadow"
+          onClick={handleNotificationClick}
+        >
+          <p className="text-sm font-medium">
+            {notificationMessage.split('Available')[0]}
+            <span className="text-green-600 font-bold">Available</span>
+          </p>
+        </div>
+      )}
       {/* Hero Section */}
       <div className="text-center py-6 px-4">
         <h2 className="text-sm font-semibold text-[#0047AB] uppercase tracking-wide">
@@ -264,45 +322,204 @@ function App() {
       <div className="flex gap-6 max-w-7xl mx-auto relative z-10">
         {/* Left Side - Results List */}
         <div className="w-1/2 max-h-[600px] overflow-y-auto">
-          {/* Section Title */}
-          <div className="mb-4">
-            <h3 className="text-xl font-bold text-[#002f6c] mb-2">
-              {selectedCategory === 'All'
-                ? '🏠 All Resources'
-                : selectedCategory === 'Comprehensive Support'
-                  ? '🧭 Comprehensive Support'
-                  : `📋 ${selectedCategory}`
-              }
-            </h3>
-            <p className="text-sm text-gray-600">
-              {filteredResources.length} {filteredResources.length === 1 ? 'resource' : 'resources'} found
-            </p>
-          </div>
-          <div className="space-y-4">
-            {filteredResources.map((r, i) => (
-              <div key={i} className="bg-white border border-[#0047AB] rounded-xl shadow p-5">
-                <h2 className="text-lg font-semibold text-[#002f6c]">{r.name}</h2>
-                <p className="text-sm text-[#0047AB]">{r.address}</p>
-                <p className="text-sm"><strong>Category:</strong> {r.category}</p>
-                <p className="text-sm"><strong>Hours:</strong> {r.open_hours}</p>
-                <p className="text-sm"><strong>Contact:</strong> {r.contact}</p>
-                <p className="text-sm"><strong>Youth Friendly:</strong> {r.youth_friendly ? 'Yes' : 'No'}</p>
-                {r.distance && (
-                  <p className="text-sm"><strong>Distance:</strong> {r.distance.toFixed(1)} miles</p>
-                )}
-                <p className="text-sm mt-2">
-                  <a
-                    href={"https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(r.address)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#0047AB] underline"
-                  >
-                    View on Google Maps
-                  </a>
+          {selectedCategory === 'Medicine Lookup' ? (
+            <div>
+              {/* Medicine Lookup Interface */}
+              <div className="mb-4">
+                <h3 className="text-xl font-bold text-[#002f6c] mb-2">
+                  💊 Medicine Lookup
+                </h3>
+                <p className="text-sm text-gray-600">
+                  Find affordable alternatives to your medication
                 </p>
               </div>
-            ))}
-          </div>
+
+              {!showMedicineResults ? (
+                <div className="bg-white border border-[#0047AB] rounded-xl shadow p-6">
+                  <form onSubmit={handleMedicineSubmit}>
+                    <label className="block text-sm font-medium text-[#002f6c] mb-2">
+                      Name of Medicine:
+                    </label>
+                    <input
+                      type="text"
+                      value={medicineName}
+                      onChange={(e) => setMedicineName(e.target.value)}
+                      placeholder="Enter medicine name (e.g., Benadryl)"
+                      className="w-full px-3 py-2 border border-[#0047AB] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0047AB] mb-4"
+                    />
+                    <button
+                      type="submit"
+                      className="px-4 py-2 bg-[#0047AB] text-white rounded-lg hover:bg-[#003b91] transition-colors"
+                    >
+                      Search Medicine
+                    </button>
+                  </form>
+                </div>
+              ) : (
+                <div className="space-y-4">
+                  {/* Medicine Name Display */}
+                  <div className="bg-white border border-[#0047AB] rounded-xl shadow p-5">
+                    <h4 className="text-lg font-semibold text-[#002f6c] mb-2">
+                      Medicine: {medicineName}
+                    </h4>
+                    <p className="text-sm text-gray-600">
+                      <strong>Active Ingredient:</strong> Diphenhydramine HCl (25mg)
+                    </p>
+                  </div>
+
+                  {/* Affordable Alternatives */}
+                  <div className="bg-white border border-[#0047AB] rounded-xl shadow p-5">
+                    <h4 className="text-lg font-semibold text-[#002f6c] mb-4">
+                      Affordable & Reliable Alternatives:
+                    </h4>
+
+                    <div className="space-y-4">
+                      {/* CVS Option */}
+                      <div className="border border-gray-200 rounded-lg p-4">
+                        <div className="flex items-start gap-4">
+                          <div className="w-20 h-20 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <span className="text-xs text-gray-500">CVS Generic</span>
+                          </div>
+                          <div className="flex-1">
+                            <h5 className="font-semibold text-[#002f6c]">CVS Health Diphenhydramine</h5>
+                            <p className="text-sm text-gray-600 mb-2">100 tablets</p>
+                            <p className="text-lg font-bold text-green-600">$4.99</p>
+                            <p className="text-sm text-gray-500 mb-3">
+                              <strong>Active Ingredient:</strong> Diphenhydramine HCl (25mg)
+                            </p>
+                            <button
+                              onClick={() => handleCheckAvailability('CVS')}
+                              className={`px-4 py-2 rounded-lg font-bold transition-colors ${availabilityStatus['CVS'] === 'checking'
+                                ? 'bg-yellow-500 text-white'
+                                : availabilityStatus['CVS'] === 'available'
+                                  ? 'bg-green-100 text-green-800 border border-green-300'
+                                  : 'bg-green-600 text-white hover:bg-green-700'
+                                }`}
+                            >
+                              {availabilityStatus['CVS'] === 'checking'
+                                ? 'Contacting Store...'
+                                : availabilityStatus['CVS'] === 'available'
+                                  ? 'Availability Status: Available'
+                                  : 'Check Availability using AI'
+                              }
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Walgreens Option */}
+                      <div className="border border-gray-200 rounded-lg p-4">
+                        <div className="flex items-start gap-4">
+                          <div className="w-20 h-20 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <span className="text-xs text-gray-500">Walgreens Generic</span>
+                          </div>
+                          <div className="flex-1">
+                            <h5 className="font-semibold text-[#002f6c]">Walgreens Diphenhydramine</h5>
+                            <p className="text-sm text-gray-600 mb-2">100 tablets</p>
+                            <p className="text-lg font-bold text-green-600">$5.49</p>
+                            <p className="text-sm text-gray-500 mb-3">
+                              <strong>Active Ingredient:</strong> Diphenhydramine HCl (25mg)
+                            </p>
+                            <button
+                              onClick={() => handleCheckAvailability('Walgreens')}
+                              className={`px-4 py-2 rounded-lg font-bold transition-colors ${availabilityStatus['Walgreens'] === 'checking'
+                                ? 'bg-yellow-500 text-white'
+                                : availabilityStatus['Walgreens'] === 'available'
+                                  ? 'bg-green-100 text-green-800 border border-green-300'
+                                  : 'bg-green-600 text-white hover:bg-green-700'
+                                }`}
+                            >
+                              {availabilityStatus['Walgreens'] === 'checking'
+                                ? 'Contacting Store...'
+                                : availabilityStatus['Walgreens'] === 'available'
+                                  ? 'Availability Status: Available'
+                                  : 'Check Availability using AI'
+                              }
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Rite Aid Option */}
+                      <div className="border border-gray-200 rounded-lg p-4">
+                        <div className="flex items-start gap-4">
+                          <div className="w-20 h-20 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <span className="text-xs text-gray-500">Rite Aid Generic</span>
+                          </div>
+                          <div className="flex-1">
+                            <h5 className="font-semibold text-[#002f6c]">Rite Aid Diphenhydramine</h5>
+                            <p className="text-sm text-gray-600 mb-2">100 tablets</p>
+                            <p className="text-lg font-bold text-green-600">$4.79</p>
+                            <p className="text-sm text-gray-500 mb-3">
+                              <strong>Active Ingredient:</strong> Diphenhydramine HCl (25mg)
+                            </p>
+                            <button
+                              onClick={() => handleCheckAvailability('Rite Aid')}
+                              className={`px-4 py-2 rounded-lg font-bold transition-colors ${availabilityStatus['Rite Aid'] === 'checking'
+                                ? 'bg-yellow-500 text-white'
+                                : availabilityStatus['Rite Aid'] === 'available'
+                                  ? 'bg-green-100 text-green-800 border border-green-300'
+                                  : 'bg-green-600 text-white hover:bg-green-700'
+                                }`}
+                            >
+                              {availabilityStatus['Rite Aid'] === 'checking'
+                                ? 'Contacting Store...'
+                                : availabilityStatus['Rite Aid'] === 'available'
+                                  ? 'Availability Status: Available'
+                                  : 'Check Availability using AI'
+                              }
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          ) : (
+            <>
+              {/* Section Title */}
+              <div className="mb-4">
+                <h3 className="text-xl font-bold text-[#002f6c] mb-2">
+                  {selectedCategory === 'All'
+                    ? '🏠 All Resources'
+                    : selectedCategory === 'Comprehensive Support'
+                      ? '🧭 Comprehensive Support'
+                      : `📋 ${selectedCategory}`
+                  }
+                </h3>
+                <p className="text-sm text-gray-600">
+                  {filteredResources.length} {filteredResources.length === 1 ? 'resource' : 'resources'} found
+                </p>
+              </div>
+              <div className="space-y-4">
+                {filteredResources.map((r, i) => (
+                  <div key={i} className="bg-white border border-[#0047AB] rounded-xl shadow p-5">
+                    <h2 className="text-lg font-semibold text-[#002f6c]">{r.name}</h2>
+                    <p className="text-sm text-[#0047AB]">{r.address}</p>
+                    <p className="text-sm"><strong>Category:</strong> {r.category}</p>
+                    <p className="text-sm"><strong>Hours:</strong> {r.open_hours}</p>
+                    <p className="text-sm"><strong>Contact:</strong> {r.contact}</p>
+                    <p className="text-sm"><strong>Youth Friendly:</strong> {r.youth_friendly ? 'Yes' : 'No'}</p>
+                    {r.distance && (
+                      <p className="text-sm"><strong>Distance:</strong> {r.distance.toFixed(1)} miles</p>
+                    )}
+                    <p className="text-sm mt-2">
+                      <a
+                        href={"https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(r.address)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#0047AB] underline"
+                      >
+                        View on Google Maps
+                      </a>
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
         </div>
 
         {/* Right Side - Map */}

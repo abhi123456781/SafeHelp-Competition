@@ -166,16 +166,6 @@ function App() {
           🏠 All Resources
         </button>
 
-        <button
-          onClick={() => handleSubcategoryClick('Comprehensive Support')}
-          className={`px-4 py-2 rounded-full text-sm border-2 transition ${selectedCategory === 'Comprehensive Support'
-            ? 'bg-[#0047AB] text-white border-[#0047AB]'
-            : 'bg-white text-[#0047AB] border-[#0047AB] hover:bg-[#0047AB] hover:text-white hover:border-[#0047AB]'
-            }`}
-        >
-          🧭 Comprehensive Support
-        </button>
-
         {Object.entries(dropdownCategories).map(([dropdownName, dropdownData]) => (
           <div key={dropdownName} className="relative dropdown-container">
             <button
@@ -239,6 +229,16 @@ function App() {
             )}
           </div>
         ))}
+
+        <button
+          onClick={() => handleSubcategoryClick('Comprehensive Support')}
+          className={`px-4 py-2 rounded-full text-sm border-2 transition ${selectedCategory === 'Comprehensive Support'
+            ? 'bg-[#0047AB] text-white border-[#0047AB]'
+            : 'bg-white text-[#0047AB] border-[#0047AB] hover:bg-[#0047AB] hover:text-white hover:border-[#0047AB]'
+            }`}
+        >
+          🧭 Comprehensive Support
+        </button>
       </div>
 
       {/* Main Content Area - Split Layout */}
@@ -252,7 +252,7 @@ function App() {
                 ? '🏠 All Resources'
                 : selectedCategory === 'Comprehensive Support'
                   ? '🧭 Comprehensive Support'
-                  : `📋 ${selectedCategory} Resources`
+                  : `📋 ${selectedCategory}`
               }
             </h3>
             <p className="text-sm text-gray-600">

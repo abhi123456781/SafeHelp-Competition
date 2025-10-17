@@ -155,9 +155,9 @@ function App() {
       <div className="flex flex-wrap justify-center gap-2 mb-6 relative z-50">
         <button
           onClick={handleAllClick}
-          className={`px-4 py-2 rounded-full text-sm border transition ${selectedCategory === 'All'
+          className={`px-4 py-2 rounded-full text-sm border-2 transition ${selectedCategory === 'All'
             ? 'bg-[#0047AB] text-white border-[#0047AB]'
-            : 'bg-white text-[#0047AB] border-[#0047AB] hover:bg-blue-50'
+            : 'bg-white text-[#0047AB] border-[#0047AB] hover:bg-[#0047AB] hover:text-white hover:border-[#0047AB]'
             }`}
         >
           🏠 All Resources
@@ -167,9 +167,9 @@ function App() {
           <div key={dropdownName} className="relative dropdown-container">
             <button
               onClick={() => handleDropdownClick(dropdownName)}
-              className={`px-4 py-2 rounded-full text-sm border transition flex items-center gap-1 ${selectedDropdown === dropdownName
+              className={`px-4 py-2 rounded-full text-sm border-2 transition flex items-center gap-1 ${selectedDropdown === dropdownName
                 ? 'bg-[#0047AB] text-white border-[#0047AB]'
-                : 'bg-white text-[#0047AB] border-[#0047AB] hover:bg-blue-50'
+                : 'bg-white text-[#0047AB] border-[#0047AB] hover:bg-[#0047AB] hover:text-white hover:border-[#0047AB]'
                 }`}
             >
               {dropdownData.emoji} {dropdownName}
@@ -185,18 +185,21 @@ function App() {
             </button>
 
             {selectedDropdown === dropdownName && (
-              <div className="absolute top-full left-0 mt-2 bg-white border-2 border-[#0047AB] rounded-lg shadow-2xl z-[9999] min-w-max">
-                <div className="flex flex-col gap-1 p-2">
-                  {dropdownData.subcategories.map((subcategory) => (
+              <div className="absolute top-full left-0 mt-2 z-[9999] min-w-max animate-in slide-in-from-top-2 duration-300">
+                <div className="flex flex-col gap-2">
+                  {dropdownData.subcategories.map((subcategory, index) => (
                     <button
                       key={subcategory}
                       onClick={() => handleSubcategoryClick(subcategory)}
-                      className={`px-4 py-2 rounded-full text-sm border-2 transition-all duration-200 whitespace-nowrap text-left ${selectedCategory === subcategory
-                        ? 'bg-[#0047AB] text-white border-[#0047AB] shadow-md'
-                        : subcategory === 'Medicine Lookup'
-                          ? 'font-bold text-red-600 border-red-400 bg-red-50 hover:bg-red-100 hover:border-red-500'
-                          : 'text-[#002f6c] border-[#0047AB] bg-blue-50 hover:bg-blue-100 hover:border-blue-600 hover:shadow-md'
+                      className={`px-4 py-2 rounded-full text-sm border-2 transition-all duration-200 whitespace-nowrap text-left animate-in slide-in-from-left-2 duration-300 ${selectedCategory === subcategory
+                          ? 'bg-[#0047AB] text-white border-[#0047AB] shadow-md'
+                          : subcategory === 'Medicine Lookup'
+                            ? 'font-bold text-red-600 border-red-400 bg-red-50 hover:bg-red-100 hover:border-red-500 hover:shadow-md'
+                            : 'text-[#002f6c] border-[#0047AB] bg-white hover:bg-[#0047AB] hover:text-white hover:border-[#0047AB] hover:shadow-md'
                         }`}
+                      style={{
+                        animationDelay: `${index * 50}ms`
+                      }}
                     >
                       {subcategory === 'Food' && '🍽️ '}
                       {subcategory === 'Clothing' && '👕 '}

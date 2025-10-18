@@ -312,7 +312,7 @@ function App() {
         </button>
 
         {Object.entries(dropdownCategories).map(([dropdownName, dropdownData]) => (
-          <div key={dropdownName} className="relative dropdown-container">
+          <div key={dropdownName} className="relative dropdown-container" style={{ position: 'relative' }}>
             <button
               onClick={() => handleDropdownClick(dropdownName)}
               onMouseEnter={() => handleDropdownMouseEnter(dropdownName)}
@@ -336,7 +336,14 @@ function App() {
 
             {selectedDropdown === dropdownName && (
               <div
-                className="absolute top-full left-0 z-[9999] w-max max-w-xs animate-in slide-in-from-top-2 duration-300"
+                className="absolute z-[9999] w-max max-w-xs animate-in slide-in-from-top-2 duration-300"
+                style={{
+                  position: 'absolute',
+                  top: '100%',
+                  left: 0,
+                  transform: 'translateY(0)',
+                  willChange: 'transform'
+                }}
                 onMouseEnter={() => handleDropdownMouseEnter(dropdownName)}
                 onMouseLeave={handleDropdownMouseLeave}
               >
@@ -393,7 +400,7 @@ function App() {
       </div>
 
       {/* Main Content Area - Split Layout */}
-      <div className="flex gap-6 max-w-7xl mx-auto relative z-10">
+      <div className="flex gap-6 max-w-7xl mx-auto relative z-10" style={{ position: 'relative' }}>
         {/* Left Side - Results List */}
         <div className="w-1/2 max-h-[600px] overflow-y-auto">
           {selectedCategory === 'Medicine Lookup' ? (

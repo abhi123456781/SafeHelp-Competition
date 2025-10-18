@@ -412,7 +412,7 @@ function App() {
                       type="text"
                       value={medicineName}
                       onChange={(e) => setMedicineName(e.target.value)}
-                      placeholder="Enter medicine name (e.g., Benadryl)"
+                      placeholder="Enter medicine name (e.g., Tylenol, Advil, etc.)"
                       className="w-full px-3 py-2 border border-[#0047AB] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0047AB] mb-4"
                     />
                     <button
@@ -462,7 +462,16 @@ function App() {
                           <div className="border border-gray-200 rounded-lg p-4">
                             <div className="flex items-start gap-4">
                               <div className="flex-1">
-                                <h5 className="font-semibold text-[#002f6c]">CVS Health Diphenhydramine</h5>
+                                <h5 className="font-semibold text-[#002f6c]">
+                                  <a
+                                    href="https://www.cvs.com/shop/cvs-health-diphenhydramine-hcl-25mg-tablets-100ct-prodid-1012012"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-[#0047AB] hover:underline"
+                                  >
+                                    CVS Health Diphenhydramine
+                                  </a>
+                                </h5>
                                 <p className="text-sm text-gray-600 mb-2">100 tablets</p>
                                 <p className="text-lg font-bold text-green-600">$4.99</p>
                                 <p className="text-sm text-gray-500 mb-3">
@@ -492,7 +501,16 @@ function App() {
                           <div className="border border-gray-200 rounded-lg p-4">
                             <div className="flex items-start gap-4">
                               <div className="flex-1">
-                                <h5 className="font-semibold text-[#002f6c]">Walgreens Diphenhydramine</h5>
+                                <h5 className="font-semibold text-[#002f6c]">
+                                  <a
+                                    href="https://www.walgreens.com/store/c/walgreens-diphenhydramine-hcl-25mg-tablets/ID=prod6258140-product"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-[#0047AB] hover:underline"
+                                  >
+                                    Walgreens Diphenhydramine
+                                  </a>
+                                </h5>
                                 <p className="text-sm text-gray-600 mb-2">100 tablets</p>
                                 <p className="text-lg font-bold text-green-600">$5.49</p>
                                 <p className="text-sm text-gray-500 mb-3">
@@ -522,7 +540,16 @@ function App() {
                           <div className="border border-gray-200 rounded-lg p-4">
                             <div className="flex items-start gap-4">
                               <div className="flex-1">
-                                <h5 className="font-semibold text-[#002f6c]">Rite Aid Diphenhydramine</h5>
+                                <h5 className="font-semibold text-[#002f6c]">
+                                  <a
+                                    href="https://www.riteaid.com/shop/diphenhydramine-hcl-25mg-tablets-100ct-rite-aid-brand"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-[#0047AB] hover:underline"
+                                  >
+                                    Rite Aid Diphenhydramine
+                                  </a>
+                                </h5>
                                 <p className="text-sm text-gray-600 mb-2">100 tablets</p>
                                 <p className="text-lg font-bold text-green-600">$4.79</p>
                                 <p className="text-sm text-gray-500 mb-3">

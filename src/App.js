@@ -473,7 +473,7 @@ function App() {
                                   </a>
                                 </h5>
                                 <p className="text-sm text-gray-600 mb-2">100 tablets</p>
-                                <p className="text-lg font-bold text-green-600">$4.99</p>
+                                <p className="text-lg font-bold text-green-600">$6.79</p>
                                 <p className="text-sm text-gray-500 mb-3">
                                   <strong>Active Ingredient:</strong> Diphenhydramine HCl (25mg)
                                 </p>
@@ -512,7 +512,7 @@ function App() {
                                   </a>
                                 </h5>
                                 <p className="text-sm text-gray-600 mb-2">100 tablets</p>
-                                <p className="text-lg font-bold text-green-600">$5.49</p>
+                                <p className="text-lg font-bold text-green-600">$4.99</p>
                                 <p className="text-sm text-gray-500 mb-3">
                                   <strong>Active Ingredient:</strong> Diphenhydramine HCl (25mg)
                                 </p>
@@ -536,37 +536,37 @@ function App() {
                             </div>
                           </div>
 
-                          {/* Rite Aid Option */}
+                          {/* Target Option */}
                           <div className="border border-gray-200 rounded-lg p-4">
                             <div className="flex items-start gap-4">
                               <div className="flex-1">
                                 <h5 className="font-semibold text-[#002f6c]">
                                   <a
-                                    href="https://www.riteaid.com/shop/diphenhydramine-hcl-25mg-tablets-100ct-rite-aid-brand"
+                                    href="https://www.target.com/p/up-up-diphenhydramine-hcl-25mg-tablets-100ct/-/A-13378020"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-[#0047AB] hover:underline"
                                   >
-                                    Rite Aid Diphenhydramine
+                                    Target Up&Up Diphenhydramine
                                   </a>
                                 </h5>
                                 <p className="text-sm text-gray-600 mb-2">100 tablets</p>
-                                <p className="text-lg font-bold text-green-600">$4.79</p>
+                                <p className="text-lg font-bold text-green-600">$3.59</p>
                                 <p className="text-sm text-gray-500 mb-3">
                                   <strong>Active Ingredient:</strong> Diphenhydramine HCl (25mg)
                                 </p>
                                 <button
-                                  onClick={() => handleCheckAvailability('Rite Aid')}
-                                  className={`px-4 py-2 rounded-lg font-bold transition-colors ${availabilityStatus['Rite Aid'] === 'checking'
+                                  onClick={() => handleCheckAvailability('Target')}
+                                  className={`px-4 py-2 rounded-lg font-bold transition-colors ${availabilityStatus['Target'] === 'checking'
                                     ? 'bg-yellow-500 text-white'
-                                    : availabilityStatus['Rite Aid'] === 'available'
+                                    : availabilityStatus['Target'] === 'available'
                                       ? 'bg-green-100 text-green-800 border border-green-300'
                                       : 'bg-green-600 text-white hover:bg-green-700'
                                     }`}
                                 >
-                                  {availabilityStatus['Rite Aid'] === 'checking'
+                                  {availabilityStatus['Target'] === 'checking'
                                     ? 'Contacting Store...'
-                                    : availabilityStatus['Rite Aid'] === 'available'
+                                    : availabilityStatus['Target'] === 'available'
                                       ? <span>Availability Status: <span className="font-bold text-green-600">Available</span></span>
                                       : 'Check Availability using AI'
                                   }

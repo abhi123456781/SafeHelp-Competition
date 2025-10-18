@@ -142,17 +142,23 @@ function App() {
     setSelectedDropdown(null);
 
     if (subcategory === 'Medicine Lookup') {
-      setShowMedicineResults(false); // Show input form first
-      setMedicineName('');
-      setAvailabilityStatus({}); // Reset availability status
-      setShowActiveIngredient(false);
-      setShowStoreAlternatives(false);
-      setIsLoadingIngredient(false);
-      setIsLoadingStores(false);
+      // Only reset if no medicine has been searched yet
+      if (!medicineName) {
+        setShowMedicineResults(false); // Show input form first
+        setAvailabilityStatus({}); // Reset availability status
+        setShowActiveIngredient(false);
+        setShowStoreAlternatives(false);
+        setIsLoadingIngredient(false);
+        setIsLoadingStores(false);
+      } else {
+        // If medicine has been searched, show the results
+        setShowMedicineResults(true);
+      }
       return;
     }
 
-    setShowMedicineResults(false);
+    // Don't reset Medicine Lookup states when switching to other categories
+    // This preserves the medicine search results
     const matching = resources.filter(r => r.category === subcategory);
 
     if (userLocation && matching.length > 0) {
@@ -168,7 +174,7 @@ function App() {
   const handleAllClick = () => {
     setSelectedCategory('All');
     setSelectedDropdown(null);
-    setShowMedicineResults(false);
+    // Don't reset Medicine Lookup states - preserve the search results
   };
 
   const handleMedicineSubmit = (e) => {

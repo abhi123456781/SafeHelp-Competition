@@ -225,7 +225,7 @@ function App() {
       setTimeout(() => {
         setShowNotification(false);
       }, 5000);
-    }, 60000); // 1 minute for demo
+    }, 42000); // 1 minute for demo
   };
 
   const handleNotificationClick = () => {
